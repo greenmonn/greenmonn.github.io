@@ -3,7 +3,9 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>About</title>
+  <link rel="stylesheet" href="/assets/css/bulma.min.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="greenmonn.github.io" />
   <!-- Begin Jekyll SEO tag v2.5.0 -->
@@ -21,24 +23,74 @@
 </head>
 
 <body>
-  <nav>
-  
-  <a href="/" >
-  Home
-  </a>
-  
-  <a href="/about.html"  style="color: red;" >
-  About
-  </a>
-  
-  <a href="/blog.html" >
-  Blog
-  </a>
-  
-</nav>
-  <h1 id="about">About</h1>
+  <div class="wrap">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item navbar-title" href="/">
+        <span class="greenmon">Greenmon</span>.xyz
+      </a>
 
-<p>Greenmon, a naive and clumsy green monster.</p>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-start">
+      </div>
+      <div class="navbar-end">
+        
+        <a class="navbar-item" href="/" >
+          Home
+        </a>
+        
+        <a class="navbar-item" href="/about.html"  style="color: red;" >
+          About
+        </a>
+        
+        <a class="navbar-item" href="/blog.html" >
+          Blog
+        </a>
+        
+      </div>
+    </div>
+  </nav>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+
+      // Add a click event on each of them
+      $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+
+        });
+      });
+    }
+
+  });
+</script>
+  <section>
+    <div class="wrap">
+      <h1 id="about">About</h1>
+
+<p>I’m Greenmon, a clumsy green monster.</p>
 
 <p><img src="/assets/images/Greenmon-1.png" alt="greenmon" />
 <img src="/assets/images/Greenmon-2.png" alt="greenmon" />
@@ -46,6 +98,10 @@
 <img src="/assets/images/Greenmon-4.png" alt="greenmon" />
 <img src="/assets/images/Greenmon-5.png" alt="greenmon" /></p>
 
+<p>This blog is served by <a href="https://jekyllrb.com/">Jekyll</a> + <a href="https://pages.github.com/">Github Pages</a>.</p>
+
+    </div>
+  </section>
 </body>
 
 </html>

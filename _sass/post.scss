@@ -1,0 +1,25 @@
+.h4, h4 {
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+@media only screen and (min-width: 768px) {
+    .h4, h4 {
+        font-size: 16px;
+    }
+}
+
+@media only screen and (min-width: 1220px) {
+    .h4, h4 {
+        font-size: 18px;
+    }
+}
+
+.posts-list {
+    margin-top: 3%;
+
+    li {
+        margin-bottom: 20px;
+    }
+}

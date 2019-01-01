@@ -3,7 +3,9 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Blog</title>
+  <link rel="stylesheet" href="/assets/css/bulma.min.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
   <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="greenmonn.github.io" />
   <!-- Begin Jekyll SEO tag v2.5.0 -->
@@ -21,34 +23,182 @@
 </head>
 
 <body>
-  <nav>
-  
-  <a href="/" >
-  Home
-  </a>
-  
-  <a href="/about.html" >
-  About
-  </a>
-  
-  <a href="/blog.html"  style="color: red;" >
-  Blog
-  </a>
-  
-</nav>
-  <h1>Latest Posts</h1>
+  <div class="wrap">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item navbar-title" href="/">
+        <span class="greenmon">Greenmon</span>.xyz
+      </a>
 
-<ul>
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-start">
+      </div>
+      <div class="navbar-end">
+        
+        <a class="navbar-item" href="/" >
+          Home
+        </a>
+        
+        <a class="navbar-item" href="/about.html" >
+          About
+        </a>
+        
+        <a class="navbar-item" href="/blog.html"  style="color: red;" >
+          Blog
+        </a>
+        
+      </div>
+    </div>
+  </nav>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+
+      // Add a click event on each of them
+      $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+
+        });
+      });
+    }
+
+  });
+</script>
+  <section>
+    <div class="wrap">
+      <h1>Latest Posts</h1>
+
+<ul class="posts-list">
   
     <li>
-      <h2><a href="/2018/10/13/lauv.html">Lauv</a></h2>
-      <p><h1 id="lauv---i-met-you-when-i-was-18">Lauv - I met you when I was 18.</h1>
-<p>#lyrics #lauv</p>
-
-</p>
+      <h4><a href="/2018/12/31/ui-framework.html">2018.12.31 - 부트스트랩 말고도 엄청 많은 UI Framework 모음</a></h4>
+      
+        <span class="tag is-light">#web</span>
+      
+        <span class="tag is-light">#css</span>
+      
     </li>
+    
+  
+    <li>
+      <h4><a href="/2018/12/02/socket-io.html">2018.12.02 - Socket.IO 알아보기</a></h4>
+      
+        <span class="tag is-light">#web</span>
+      
+        <span class="tag is-light">#javascript</span>
+      
+    </li>
+    
+  
+    <li>
+      <h4><a href="/2018/11/27/object-copy.html">2018.11.27 - Golang에서 object copy 개념 짚고 넘어가기</a></h4>
+      
+        <span class="tag is-light">#golang</span>
+      
+    </li>
+    
+  
+    <li>
+      <h4><a href="/2018/11/24/passing-by-reference.html">2018.11.24 - C++에서 Passing by Reference란?</a></h4>
+      
+        <span class="tag is-light">#c++</span>
+      
+    </li>
+    
+  
+    <li>
+      <h4><a href="/2018/11/24/content-type.html">2018.11.24 - HTTP header 중 content-type에 대해 알아보자</a></h4>
+      
+        <span class="tag is-light">#web</span>
+      
+        <span class="tag is-light">#http</span>
+      
+    </li>
+    
+  
+    <li>
+      <h4><a href="/2018/11/24/c-header-file.html">2018.11.24 - C와 C++의 header file은 뭘 위한 걸까?</a></h4>
+      
+        <span class="tag is-light">#c++</span>
+      
+        <span class="tag is-light">#c</span>
+      
+    </li>
+    
+  
+    <li>
+      <h4><a href="/2018/10/27/jsmobileconf-day2.html">2018.10.27 - JSMobileConf 2018 Day 2 노트</a></h4>
+      
+        <span class="tag is-light">#conference</span>
+      
+        <span class="tag is-light">#javascript</span>
+      
+    </li>
+    
+  
+    <li>
+      <h4><a href="/2018/10/26/jsmobileconf-day1.html">2018.10.26 - JSMobileConf 2018 Day 1 노트</a></h4>
+      
+        <span class="tag is-light">#conference</span>
+      
+        <span class="tag is-light">#javascript</span>
+      
+    </li>
+    
+  
+    <li>
+      <h4><a href="/2018/10/11/closure.html">2018.10.11 - Golang closure</a></h4>
+      
+        <span class="tag is-light">#golang</span>
+      
+    </li>
+    
+  
+    <li>
+      <h4><a href="/2018/09/17/babel-basic.html">2018.09.17 - babel cheat sheet</a></h4>
+      
+        <span class="tag is-light">#web</span>
+      
+        <span class="tag is-light">#javascript</span>
+      
+    </li>
+    
+  
+    <li>
+      <h4><a href="/2018/09/17/about-electron.html">2018.09.17 - electron 처음 시작하기</a></h4>
+      
+        <span class="tag is-light">#web</span>
+      
+        <span class="tag is-light">#javascript</span>
+      
+    </li>
+    
   
 </ul>
+    </div>
+  </section>
 </body>
 
 </html>

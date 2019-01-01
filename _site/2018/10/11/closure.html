@@ -1,0 +1,129 @@
+<!doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Golang closure</title>
+  <link rel="stylesheet" href="/assets/css/bulma.min.css">
+  <link rel="stylesheet" href="/assets/css/styles.css">
+  <link type="application/atom+xml" rel="alternate" href="http://localhost:4000/feed.xml" title="greenmonn.github.io" />
+  <!-- Begin Jekyll SEO tag v2.5.0 -->
+<title>Golang closure | greenmonn.github.io</title>
+<meta name="generator" content="Jekyll v3.7.4" />
+<meta property="og:title" content="Golang closure" />
+<meta property="og:locale" content="en_US" />
+<meta name="description" content="Go supports anonymous function (also known as function literal, lambda abstraction, or lambda expression), which can form closures." />
+<meta property="og:description" content="Go supports anonymous function (also known as function literal, lambda abstraction, or lambda expression), which can form closures." />
+<link rel="canonical" href="http://localhost:4000/2018/10/11/closure.html" />
+<meta property="og:url" content="http://localhost:4000/2018/10/11/closure.html" />
+<meta property="og:site_name" content="greenmonn.github.io" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2018-10-11T00:00:00+09:00" />
+<script type="application/ld+json">
+{"url":"http://localhost:4000/2018/10/11/closure.html","headline":"Golang closure","dateModified":"2018-10-11T00:00:00+09:00","datePublished":"2018-10-11T00:00:00+09:00","mainEntityOfPage":{"@type":"WebPage","@id":"http://localhost:4000/2018/10/11/closure.html"},"description":"Go supports anonymous function (also known as function literal, lambda abstraction, or lambda expression), which can form closures.","@type":"BlogPosting","@context":"http://schema.org"}</script>
+<!-- End Jekyll SEO tag -->
+
+</head>
+
+<body>
+  <div class="wrap">
+  <nav class="navbar" role="navigation" aria-label="main navigation">
+    <div class="navbar-brand">
+      <a class="navbar-item navbar-title" href="/">
+        <span class="greenmon">Greenmon</span>.xyz
+      </a>
+
+      <a role="button" class="navbar-burger burger" aria-label="menu" aria-expanded="false" data-target="navbarMenu">
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+        <span aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <div id="navbarMenu" class="navbar-menu">
+      <div class="navbar-start">
+      </div>
+      <div class="navbar-end">
+        
+        <a class="navbar-item" href="/" >
+          Home
+        </a>
+        
+        <a class="navbar-item" href="/about.html" >
+          About
+        </a>
+        
+        <a class="navbar-item" href="/blog.html" >
+          Blog
+        </a>
+        
+      </div>
+    </div>
+  </nav>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+
+    // Get all "navbar-burger" elements
+    const $navbarBurgers = Array.prototype.slice.call(document.querySelectorAll('.navbar-burger'), 0);
+
+    // Check if there are any navbar burgers
+    if ($navbarBurgers.length > 0) {
+
+      // Add a click event on each of them
+      $navbarBurgers.forEach(el => {
+        el.addEventListener('click', () => {
+
+          // Get the target from the "data-target" attribute
+          const target = el.dataset.target;
+          const $target = document.getElementById(target);
+
+          // Toggle the "is-active" class on both the "navbar-burger" and the "navbar-menu"
+          el.classList.toggle('is-active');
+          $target.classList.toggle('is-active');
+
+        });
+      });
+    }
+
+  });
+</script>
+  <section>
+    <div class="wrap">
+      <h1>Golang closure</h1>
+<p>2018.10.11</p>
+
+<p>Go supports <strong>anonymous function</strong> (also known as <strong>function literal</strong>, <strong>lambda abstraction</strong>, or <strong>lambda expression</strong>), which can form <strong>closures</strong>.</p>
+
+<blockquote>
+  <p><em>Anonymous function</em> is a function definition that is not bound to an <em>identifier</em></p>
+</blockquote>
+
+<blockquote>
+  <p><em>Closure</em> is a function value that references variables from outside its body</p>
+</blockquote>
+
+<h2 id="example-ginkgo">Example: ginkgo</h2>
+
+<p>Ginkgo makes extensive use of clousres to allow building descriptive test suites.</p>
+
+<p>In order to share state between a <code class="highlighter-rouge">BeforeEach</code> and <code class="highlighter-rouge">It</code>, use closure variables, typically defined at the top of the most relevant <code class="highlighter-rouge">Describe</code> or <code class="highlighter-rouge">Context</code> container.</p>
+
+<p>The <code class="highlighter-rouge">BeforeEach</code> is run before each spec thereby ensuring that each spec has a pristine copy of the state. Common state is shared using <strong>closure variables</strong> (<code class="highlighter-rouge">var book Book</code> in this case). You can also perform clean up in <code class="highlighter-rouge">AfterEach</code> blocks.</p>
+
+<p>The important thing is:</p>
+
+<blockquote>
+  <p>It is also a mistake to initialize a closure variable in a container block. If one of your <code class="highlighter-rouge">It</code>s mutates that variable, subsequent <code class="highlighter-rouge">It</code>s will receive the mutated value. This is a case of test pollution and can be hard to track down. Always initialize your variables in <code class="highlighter-rouge">BeforeEach</code> blocks.</p>
+</blockquote>
+
+<h2 id="5-userful-ways-to-use-closures-in-go">5 Userful Ways to Use Closures in Go</h2>
+<p><a href="https://www.calhoun.io/5-useful-ways-to-use-closures-in-go/">Link</a></p>
+
+    </div>
+  </section>
+</body>
+
+</html>

@@ -3,7 +3,9 @@
 
 <head>
   <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ page.title }}</title>
+  <link rel="stylesheet" href="/assets/css/bulma.min.css">
   <link rel="stylesheet" href="/assets/css/styles.css">
   {% feed_meta %}
   {% seo %}
@@ -11,7 +13,11 @@
 
 <body>
   {% include navigation.html %}
-  {{ content }}
+  <section>
+    <div class="wrap">
+      {{ content }}
+    </div>
+  </section>
 </body>
 
 </html>
