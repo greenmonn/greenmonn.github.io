@@ -41,12 +41,6 @@ for new_post in new_posts:
     post_file = re.sub("^# .*\n", "", post_file)
     print("[*] in-post title removed", in_post_titles)
 
-    # remove in-post tags and save tag
-    in_post_tags = re.findall("#\w+", post_file)
-    post_file = re.sub("#\w+", "", post_file)
-    in_post_tags = [tag.replace("#", "") for tag in in_post_tags]
-    print("[*] in-post tag removed", in_post_tags)
-
     # find all image tags
     img_tags = re.findall('!\[\]\(.*\)', post_file)
 
