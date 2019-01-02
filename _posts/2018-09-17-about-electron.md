@@ -11,7 +11,7 @@ tags: [TIL, web, javascript]
 
 - Electron에 새로 추가되는 기능은 기본적으로 Node.js 모듈 형식의 네이티브 API가 된다.
 
-![Electron Basic](https://www.dropbox.com/s/wy9p5tm1qn33mqr/kinney_1_01.png?raw=1)
+![Electron Basic](https://www.dropbox.com/s/zxti7jgb3gc49wp/electron.png?raw=1)
 
 - [Electron Documentation](https://electronjs.org/docs)
 
