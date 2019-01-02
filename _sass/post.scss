@@ -21,28 +21,37 @@
 
 .post-content {
     margin-top: 7%;
+
+    img {
+        margin: 6% 0;
+    }
+    
+    pre {
+        margin: 3% 0;
+    
+        code {
+            font-size: 12px;
+        }
+    
+        @media only screen and (min-width: 768px) {
+            code {
+                font-size: 14px;
+            }
+        }
+        
+        @media only screen and (min-width: 1220px) {
+            code {
+                font-size: 16px;
+            }
+        }
+    }
+    
+    ul {
+        list-style: disc;
+    }
 }
 
 #disqus_thread {
     margin-top: 10%;
 }
 
-pre {
-    margin: 3% 0;
-
-    code {
-        font-size: 12px;
-    }
-
-    @media only screen and (min-width: 768px) {
-        code {
-            font-size: 14px;
-        }
-    }
-    
-    @media only screen and (min-width: 1220px) {
-        code {
-            font-size: 16px;
-        }
-    }
-}
