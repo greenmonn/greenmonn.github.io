@@ -1,6 +1,6 @@
 ---
 title: C와 C++의 header file은 뭘 위한 걸까?
-tags: [c++, c]
+tags: [TIL, c++, c]
 ---
 
 ## Purpose?

@@ -1,5 +1,5 @@
 body {
-    font-family: Muli, 'Noto Sans KR', sans-serif;
+    font-family: Muli, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
     font-weight: 400;
     font-style: normal;
     line-height: 1;
@@ -67,6 +67,14 @@ section {
     .content-wrap {
         width: 90%;
         margin: 0 auto;
+    }
+}
+
+.intro {
+    div {
+        p {
+            line-height: 1.3;
+        }
     }
 }
 

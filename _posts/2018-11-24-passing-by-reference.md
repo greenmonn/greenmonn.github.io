@@ -1,6 +1,6 @@
 ---
 title: C++에서 Passing by Reference란?
-tags: [c++]
+tags: [TIL, c++]
 ---
 
 Pass-by-reference means to pass the *reference of an argument* in the calling function to the corresponding *formal parameter of the called function*.

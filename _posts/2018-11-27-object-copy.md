@@ -1,6 +1,6 @@
 ---
 title: Golang에서 object copy 개념 짚고 넘어가기
-tags: [golang]
+tags: [TIL, golang]
 ---
 
 When creating copies of arrays or objects one can make a deep copy or a shallow copy.

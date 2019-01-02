@@ -1,6 +1,6 @@
 ---
 title: babel cheat sheet
-tags: [web, javascript]
+tags: [TIL, web, javascript]
 ---
 
 ## Install babel

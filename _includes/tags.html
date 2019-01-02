@@ -1,0 +1,22 @@
+<h1>Tags</h1>
+
+<ul class="tag-cloud">
+    {% for tag in site.tags %}
+
+    {% capture tag_name %}{{tag|first|slugize}}{% endcapture %}
+
+    {% capture font_size %}{{tag|last|size| times:100 | divided_by:site.tags.size | plus: 50 }}%{% endcapture %}
+
+    {% assign tag_size = tag | last | size %}
+
+    {% if tag_size > 3 %}
+    {% assign tag_class = "is-primary" %}
+    {% else %}
+    {% assign tag_class = "is-light" %}
+    {% endif %}
+
+    <li>
+        <a href="/tags#{{ tag_name }}"><span class="tag {{ tag_class }}">#{{ tag_name }} ({{ tag_size }})</span></a>
+    </li>
+    {% endfor %}
+</ul>

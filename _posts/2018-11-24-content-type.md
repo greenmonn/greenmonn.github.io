@@ -1,6 +1,6 @@
 ---
 title: HTTP header 중 content-type에 대해 알아보자
-tags: [web, http]
+tags: [TIL, web, http]
 ---
 
 The `Content-Type` entity header is used to indicate the **media type** of the resource.

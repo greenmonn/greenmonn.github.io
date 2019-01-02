@@ -1,6 +1,6 @@
 ---
 title: electron 처음 시작하기
-tags: [web, javascript]
+tags: [TIL, web, javascript]
 ---
 
 - 크로스 플랫폼 데스크탑 애플리케이션을 만들기 위한 오픈 소스 라이브러리이다.

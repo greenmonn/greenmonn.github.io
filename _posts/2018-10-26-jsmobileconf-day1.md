@@ -1,6 +1,6 @@
 ---
 title: JSMobileConf 2018 Day 1 노트 
-tags: [conference,javascript]
+tags: [TIL, conference,javascript]
 ---
   
 

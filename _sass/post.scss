@@ -2,10 +2,19 @@
     margin-top: 3%;
 
     li {
+        list-style: none;
         margin-bottom: 20px;
     }
 }
 
-.post-title {
+.tag-cloud {
+    margin-top: 3%;
 
+    li {
+        display: inline-block;
+    }
+}
+
+#disqus_thread {
+    margin-top: 10%;
 }

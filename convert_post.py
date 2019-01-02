@@ -55,7 +55,7 @@ for new_post in new_posts:
     front_matter = '---\n' \
                    'title: {}\n' \
                    'tags: [{}]\n' \
-                   '---\n'.format(post_title, ",".join(in_post_tags))
+                   '---\n'.format(post_title, ",".join(["TIL"]))
     post_file = front_matter + post_file
     print("[*] jekyll front matter generated")
 
