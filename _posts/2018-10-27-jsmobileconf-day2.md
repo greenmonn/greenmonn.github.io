@@ -88,7 +88,7 @@ Select `Progressive Web App` support when generating a project using angular/rea
 - Being Engaging
 	- app-manifest.firebaseapp.com
 	- link manifest.json file
-	- [웹 앱 매니페스트  |  Web       |  Google Developers](https://developers.google.com/web/fundamentals/web-app-manifest/?hl=ko)
+	- [Google Developers](https://developers.google.com/web/fundamentals/web-app-manifest/?hl=ko)
 
 * Evaluation
 	* Run Audits on Chrome
