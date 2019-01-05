@@ -151,4 +151,5 @@ post_tags = re.findall("#([^#\s]+)", post_file_without_codeblock)
 아래 링크를 참조했다.
 
 - [07-3 강력한 정규 표현식의 세계로 - 점프 투 파이썬](https://wikidocs.net/4309) 
-- [Python Regular Expressions  |  Python Education       |  Google Developers](https://developers.google.com/edu/python/regular-expressions)
+
+- [Python Regular Expressions](https://developers.google.com/edu/python/regular-expressions)
