@@ -32,15 +32,25 @@ section {
 
 .navbar {
     margin-top: 40px;
-}
 
-.navbar-title {
-    font-size: 25px;
-    font-weight: 800;
-    letter-spacing: -.02em;
-    line-height: 1;
-    color: #2A2F36;
-    padding: 0;
+    .navbar-title {
+        font-size: 25px;
+        font-weight: 800;
+        letter-spacing: -.02em;
+        line-height: 1;
+        color: #2A2F36;
+        padding: 0;
+    }
+
+    .navbar-menu {
+        .navbar-end {
+            .navbar-item {
+                &:hover {
+                    color: green;
+                }
+            }
+        }
+    }
 }
 
 .wrap {

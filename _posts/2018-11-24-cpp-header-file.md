@@ -1,8 +1,9 @@
 ---
-title: C와 C++의 header file은 뭘 위한 걸까?
-tags: [TIL, c++, c]
+title: Header file in C/C++
+tags: [c++, TIL]
 ---
 
+ 
 ## Purpose?
 - To hold declarations for other files to use.
 - Typically only contain declarations, do not define how something is *implemented*.
@@ -20,7 +21,7 @@ tags: [TIL, c++, c]
 
 ## Header guard
 
-- Header guards prevent a given header file from being #included more than once in the same file.
+- Header guards prevent a given header file from being included more than once in the same file.
 
 ```c++
 #ifndef ADD_H   // can be any unique name
@@ -55,8 +56,8 @@ When the compiler compiles the `#include "some_header.h"`, It simply copies the 
 
 - Give your header files the same name as the source files they’re associated with (e.g. grades.h goes with grades.cpp).
 
-- Try to minimize the number of other header files you #include in your header files. Only #include what is necessary.
-Do not #include .cpp files.
+- Try to minimize the number of other header files you include in your header files. Only include what is necessary.
+Do not include .cpp files.
 
 
 ## See also

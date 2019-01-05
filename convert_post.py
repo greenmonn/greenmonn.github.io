@@ -21,41 +21,43 @@ for new_post in new_posts:
 
     post_filename = new_post
     post_path = os.path.join(posts_path, post_filename)
-    post_title = post_filename.replace('.md', '')
 
-    print("new post found: ", post_title)
-
-    # move images to assets/img
-    try:
-        post_img_path = shutil.move(os.path.join("_posts", post_title), image_path)
-        print("[*] image files moved to", post_img_path)
-    except FileNotFoundError:
-        print("[**] No image directory found: skip moving image")
+    print("new post found: ", post_filename)
 
     # read whole post file
     with open(post_path, 'r') as f:
         post_file = f.read()
 
-    # remove in-post title (assume H1 tag on the top of the file is containing title)
-    in_post_titles = re.findall("^# .*\n", post_file)
+    # extract post title (assume H1 tag on the top of the file is containing title)
+    in_post_titles = re.findall("^# .*", post_file)
     post_file = re.sub("^# .*\n", "", post_file)
-    print("[*] in-post title removed", in_post_titles)
 
-    # find all image tags
-    img_tags = re.findall('!\[\]\(.*\)', post_file)
+    if len(in_post_titles) is 0:
+        post_title = post_filename.replace('-', ' ').replace('.md', '')
 
-    # change image path
-    for img_tag in img_tags:
-        new_path = os.path.join(image_path, img_tag[4:-1])
-        new_tag = '![](/' + new_path + ')'
-        post_file = post_file.replace(img_tag, new_tag)
-    print("[*] image path adjusted")
+    else:
+        post_title = re.sub("# ", "", in_post_titles[0]).strip()
+    
+    print("[*] post title extracted: ", post_title)
+
+    # extract post tag (except # in source code block wrapped by ``` or `
+    re_tag = re.compile("`(.*)`", re.DOTALL)
+    post_file_without_codeblock = re_tag.sub("", post_file)
+    print(post_file_without_codeblock)
+    post_tags = re.findall("#([^#\s]+)", post_file_without_codeblock)
+
+    for tag in post_tags:
+        post_file = post_file.replace("#" + tag, "")
+    
+    post_tags.append("TIL")
+
+    print("[*] post tags extracted: ", post_tags)
 
     # generate jekyll "front matter"
     front_matter = '---\n' \
                    'title: {}\n' \
                    'tags: [{}]\n' \
-                   '---\n'.format(post_title, ",".join(["TIL"]))
+                   '---\n'.format(post_title, ", ".join(post_tags))
     post_file = front_matter + post_file
     print("[*] jekyll front matter generated")
 
@@ -64,8 +66,8 @@ for new_post in new_posts:
         f.write(post_file)
 
     # rename post to jekyll post file format
-    format_today = date.today().strftime("%Y %m %d ")
-    jekyll_format_name = (format_today + post_title).replace(" ", "-") + '.md'
+    format_today = date.today().strftime('%Y %m %d ')
+    jekyll_format_name = (format_today + post_filename).replace(' ', '-').replace('_', '-')
     new_post_path = os.path.join(posts_path, jekyll_format_name)
     os.rename(post_path, new_post_path)
-    print("[*] post file renamed to follow jekyll post naming")
+    print("[*] post file renamed to follow jekyll post naming scheme")
