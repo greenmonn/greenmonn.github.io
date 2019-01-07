@@ -20,7 +20,7 @@ title: Tags
 
             <li>
                 <p>{{ post.date | date: "%Y.%m.%d" }}</p>
-                <h2><a href="{{ post.url }}">{{ post.title }}</a></h2>
+                <h3><a href="{{ post.url }}">{{ post.title }}</a></h3>
                 <h4>{{ post.excerpt | strip_html | truncatewords:75 }}</h4>
             </li>
 

@@ -5,8 +5,7 @@
         list-style: none;
         margin-bottom: 3rem;
 
-        h2 {
-            padding-top: 0;
+        h3 {
             a {
                 color: #2A2F36;
                 &:hover {
@@ -18,7 +17,6 @@
             color: #6C7A89;
             font-weight: 400;
             line-height: 1.6;
-            padding-top: 0;
             padding-bottom: 0.2rem;
         }
     }
@@ -29,6 +27,12 @@
 
     li {
         display: inline-block;
+    }
+
+    @media only screen and (max-width: 768px) {
+    li {
+        padding: 0.1rem 0;
+    }
     }
 }
 
