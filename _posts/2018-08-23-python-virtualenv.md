@@ -4,6 +4,7 @@ tags: [python, TIL]
 ---
 
 Python 버전이 꼬여서 오늘도 고통받는 당신에게
+
 <!--more-->
 
 - pyenv: https://github.com/pyenv/pyenv

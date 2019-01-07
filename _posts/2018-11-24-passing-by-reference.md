@@ -4,6 +4,7 @@ tags: [TIL, c++]
 ---
 
 C++의 특별한 Reference 개념.
+
 <!--more-->
 
 Pass-by-reference means to pass the *reference of an argument* in the calling function to the corresponding *formal parameter of the called function*.
