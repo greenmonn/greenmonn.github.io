@@ -3,8 +3,7 @@ title: Python Bytecode
 tags: [python, TIL]
 ---
 
-pyc 파일의 정체에 대해 궁
-금해하다가
+pyc 파일의 정체에 대해 궁금해하다가
 <!--more-->
 
 Python을 다루다 보면 pyc 파일을 종종 볼 수 있다. (나의 경우에는 \__pycache__ import된 파일에 대해 생성된 것을 볼 수 있었다)
