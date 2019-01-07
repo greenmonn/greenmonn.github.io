@@ -82,7 +82,9 @@ for new_post in new_posts:
                    'title: {}\n' \
                    'tags: [{}]\n' \
                    '---\n'.format(post_title, ", ".join(post_tags))
-    post_file = front_matter + post_file
+
+    excerpt_separater = '<!--more-->\n'
+    post_file = front_matter + excerpt_separator + post_file
     print("[*] jekyll front matter generated")
 
     # write post file

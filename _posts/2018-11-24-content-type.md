@@ -3,6 +3,10 @@ title: HTTP header 중 content-type에 대해 알아보자
 tags: [TIL, web, http]
 ---
 
+바이너리 데이터를 HTTP Request로 보낼 때에는 Content Type을 잘 확인하자!
+
+<!--more-->
+
 The `Content-Type` entity header is used to indicate the **media type** of the resource.
 
 ## Prevent MIME sniffing

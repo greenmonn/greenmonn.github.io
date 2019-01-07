@@ -3,6 +3,9 @@ title: Header file in C/C++
 tags: [c++, TIL]
 ---
 
+알고 있다고 생각했지만 사실은 몰랐던 헤더 파일의 진실.
+<!--more-->
+
  
 ## Purpose?
 - To hold declarations for other files to use.

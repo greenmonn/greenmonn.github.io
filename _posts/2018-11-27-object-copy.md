@@ -5,6 +5,10 @@ tags: [TIL, golang]
 
 When creating copies of arrays or objects one can make a deep copy or a shallow copy.
 
+<!--more-->
+
+When creating copies of arrays or objects one can make a deep copy or a shallow copy.
+
 ## Shallow Copy
 ![](https://cdncontribute.geeksforgeeks.org/wp-content/uploads/shallow-copy.jpg)
 

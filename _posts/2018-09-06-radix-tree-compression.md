@@ -3,6 +3,9 @@ title: Radix Tree Compression
 tags: [data-structure, TIL]
 ---
 
+trie 용어 정리
+<!--more-->
+
 - [Wikipedia](https://en.wikipedia.org/wiki/Radix_tree)에서는 child의 갯수에 따라 노드의 크기를 다르게 한 변형 radix tree를 adaptive radix tree로 칭하고 있다.
 
 - [Compressing Radix Trees Without Too Many Tears](https://medium.com/basecs/compressing-radix-trees-without-too-many-tears-a2e658adb9a0): Medium Article

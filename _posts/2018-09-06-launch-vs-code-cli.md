@@ -3,6 +3,10 @@ title: Launch VS Code from Command Line
 tags: [vscode, TIL]
 ---
 
+언제든지 터미널에서 code를 열어 보
+자
+<!--more-->
+
 PATH를 등록하면 code를 command line에서 바로 실행할 수 있다. (진작 안해놨던 것이 후회된다.)
 
 ```

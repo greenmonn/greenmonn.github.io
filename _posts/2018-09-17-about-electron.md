@@ -3,6 +3,10 @@ title: electron 처음 시작하기
 tags: [TIL, web, javascript]
 ---
 
+항상 궁금했던 electron 맛
+보기
+<!--more-->
+
 - 크로스 플랫폼 데스크탑 애플리케이션을 만들기 위한 오픈 소스 라이브러리이다.
 
 - Chromium과 Node.js를 하나의 런타임으로 통합했다. 즉, Node.js와 Chromium이 1개의 V8 엔진 인스턴스를 공유한다.

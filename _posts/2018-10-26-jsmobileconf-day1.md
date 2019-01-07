@@ -2,7 +2,10 @@
 title: JSMobileConf 2018 Day 1 노트 
 tags: [TIL, conference,javascript]
 ---
-  
+
+보스턴에서 열린 JSMobileConf 2018에서 열심히 옮겨적은 흥미로운 주제들. 첫째날.
+
+<!--more-->  
 
 ## Keynote: Evolution of the JavaScript
 ### From 2007: web -> smartphone
