@@ -3,7 +3,7 @@ title: Python에서 정규식 쓰기
 tags: [python, regexp, TIL]
 ---
 
-Jekyll로 블로그를 옮기면서 Python 스크립트를 수정하다가 정규식을 쓸 일이 생겨버렸다. 더 이상 피할 수는 없다. 정리해가면서 익혀보았다.
+Python으로 정규식 차근차근 써보기
 
 <!--more-->
 

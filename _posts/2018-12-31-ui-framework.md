@@ -3,7 +3,7 @@ title: 부트스트랩 말고도 엄청 많은 UI Framework 모음
 tags: [TIL, web, css]
 ---
 
-CSS Framework 입맛대로 고르기. 
+CSS Framework 입맛대로 고르기
 
 <!--more-->
 

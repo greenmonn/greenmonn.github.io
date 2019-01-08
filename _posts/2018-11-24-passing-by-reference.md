@@ -3,7 +3,7 @@ title: C++에서 Passing by Reference란?
 tags: [TIL, c++]
 ---
 
-C++의 특별한 Reference 개념.
+C++의 특별한 Reference 개념
 
 <!--more-->
 
