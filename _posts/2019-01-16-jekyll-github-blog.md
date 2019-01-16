@@ -20,7 +20,7 @@ Jekyll을 알게 된 건 제작년 여름 즈음, 웹개발을 좀 시작해보�
 ## 그래서 Jekyll이 뭔가요
 > Jekyll is a simple, extendable, static site generator. You give it text written in your favorite markup language and it churns through layouts to create a static website. Throughout that process you can tweak how you want the site URLs to look, what data gets displayed in the layout, and more.  
 
-공식 사이트의 설명이다. 진짜 짧게 요약하면 site generator, 사이트를 만들어주는 툴이다. 내가 지정된 구조에 맞게 내 포스트들을 마크다운 형식으로 저장하면, 알아서 static 웹 페이지(html 파일)로 빌드해준다. 단순히 `.md` 파일을 `.html` 파일로 변환시켜주기만 하는 건 아니고, 이 포스트가 들어갈 페이지의 틀도 만들 수 있고 포스트의 생성 날짜, 태그 같은 메타데이터도 사용하기 쉽게 관리해준다. 
+공식 사이트의 설명이다. 진짜 짧게 요약하면 site generator, 사이트를 만들어주는 툴이다. 지정된 구조에 맞게 내 포스트들을 마크다운 형식으로 저장하면, 알아서 static 웹 페이지(html 파일)로 빌드해준다. 단순히 `.md` 파일을 `.html` 파일로 변환시켜주기만 하는 건 아니고, 이 포스트가 들어갈 페이지의 틀도 만들 수 있고 포스트의 생성 날짜, 태그 같은 메타데이터도 사용하기 쉽게 관리해준다. 
 
 ---
 
@@ -57,7 +57,7 @@ Windows는 죄송합니다..
 ## GitHub Pages와 연동
 GitHub pages는 GitHub에서 고맙게도 계정이 있는 모든 이들에게 하나씩 제공해주는 웹 호스팅용 개인 저장소이다. GitHub에서 이름이 `<username>.github.io`인 저장소를 생성하면 자동으로 세팅된다! 
 
-이렇게 원격 저장소를 설정한 후에는, [GitHub Pages with Jekyll](https://jekyllrb.com/docs/github-pages/) 문서를 바탕으로 잘 따라하면 된다. 먼저 `Gemfile`에 `github-pages` 라는 gem을 추가해야 한다. 나는 SEO를 도와주는 다른 gem들도 함께 쓰고 있어서 아래와 같이 설정했다.
+이렇게 원격 저장소를 설정한 후에는, [GitHub Pages with Jekyll](https://jekyllrb.com/docs/github-pages/) 문서를 따라가면 된다. 먼저 `Gemfile`에 `github-pages` 라는 gem을 추가해야 한다. 나는 SEO를 도와주는 다른 gem들도 함께 쓰고 있어서 아래와 같이 설정했다.
 
 ```
 source 'https://rubygems.org'
