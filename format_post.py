@@ -79,7 +79,7 @@ for new_post in new_posts:
 
     # generate jekyll "front matter"
     front_matter = '---\n' \
-                   'title: {}\n' \
+                   'title: "{}"\n' \
                    'tags: [{}]\n' \
                    '---\n'.format(post_title, ", ".join(post_tags))
 
