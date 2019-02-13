@@ -5,7 +5,7 @@ tags: [TIL, web, javascript]
 
 babel 쓸때 더이상 삽질은 그만
 
-<!--more-->
+==more==
 
 ## Install babel
 

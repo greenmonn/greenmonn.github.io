@@ -5,7 +5,7 @@ tags: [python, regexp, TIL]
 
 Python으로 정규식 차근차근 써보기
 
-<!--more-->
+==more==
 
 Jekyll로 블로그를 옮기면서, [야크 털 깎기](https://pub.mearie.org/yak_shaving)와 같은 일을 이것저것 하고 있다. 포스트를 쓰는 데 드는 노력을 최소한으로 하고, 내가 갖고 있는 리소스를 최대한으로 활용하는 게 목표다.
 

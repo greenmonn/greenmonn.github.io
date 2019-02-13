@@ -1,3 +1,7 @@
 .vscode
 .DS_Store
 _site/
+
+test_post_change.py
+test.md
+__pycache__
