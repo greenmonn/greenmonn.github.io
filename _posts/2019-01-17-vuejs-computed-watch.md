@@ -5,7 +5,7 @@ tags: [web, javascript, vuejs, TIL]
   
 선언형 프로그래밍과 명령형 프로그래밍
 
-==more==
+<!--more-->
 
 ## computed 속성
 VueJS 공식 문서에서는 템플릿 내에 복잡한 표현식을 넣는 대신 `computed`를 사용하는 것을 권장하고 있다.

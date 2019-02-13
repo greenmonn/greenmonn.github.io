@@ -5,7 +5,7 @@ tags: [TIL, web, javascript]
 
 항상 궁금했던 electron 맛보기
 
-==more==
+<!--more-->
 
 - 크로스 플랫폼 데스크탑 애플리케이션을 만들기 위한 오픈 소스 라이브러리이다.
 

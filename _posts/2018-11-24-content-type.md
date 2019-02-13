@@ -5,7 +5,7 @@ tags: [TIL, web, http]
 
 바이너리 데이터를 HTTP Request로 보낼 때에는 Content Type을 잘 확인하자
 
-==more==
+<!--more-->
 
 The `Content-Type` entity header is used to indicate the **media type** of the resource.
 

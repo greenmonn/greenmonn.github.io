@@ -5,7 +5,7 @@ tags: [TIL, conference,javascript]
 
 보스턴에서 열린 JSMobileConf 2018에서 열심히 옮겨적은 흥미로운 주제들. 이튿날.
   
-==more==
+<!--more-->
 
 ## Standardizing JavaScript
 - What makes a standard “Open”?

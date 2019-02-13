@@ -5,7 +5,7 @@ tags: [TIL, web, css]
 
 CSS Framework 입맛대로 고르기
 
-==more==
+<!--more-->
 
 ## Twitter Bootstrap
 Responsive, Mobile-First를 지향하는, 가장 보편적이고 잘 알려진 프레임워크.

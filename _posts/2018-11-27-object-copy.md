@@ -5,7 +5,7 @@ tags: [TIL, golang]
 
 deep copy와 shallow copy가 헷갈릴 때
 
-==more==
+<!--more-->
 
 When creating copies of arrays or objects one can make a deep copy or a shallow copy.
 
