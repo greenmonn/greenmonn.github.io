@@ -77,14 +77,16 @@ for new_post in new_posts:
             post_thumbnail = new_path
     print("[*] image path adjusted")
 
+    # replace exerpt separator
+    post_file = post_file.replace('==more==', '<!--more-->')
+
     # generate jekyll "front matter"
     front_matter = '---\n' \
                    'title: "{}"\n' \
                    'tags: [{}]\n' \
                    '---\n'.format(post_title, ", ".join(post_tags))
 
-    excerpt_separator = '\n<!--more-->\n'
-    post_file = front_matter + excerpt_separator + post_file
+    post_file = front_matter + post_file
     print("[*] jekyll front matter generated")
 
     # write post file
