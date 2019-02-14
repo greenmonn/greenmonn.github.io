@@ -3,4 +3,6 @@ plugins:
   - jekyll-feed
   - jekyll-seo-tag
 
+highlighter: rouge
+
 excerpt_separator: "<!--more-->"
