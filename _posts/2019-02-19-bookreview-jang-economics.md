@@ -1,6 +1,6 @@
 ---
 title: "장하준의 경제학 강의: 지적으로는 비관주의, 의지로는 낙관주의"
-tags: [TIL]
+tags: [TIL, bookreview, essay]
 ---
 
 주류에 대한 일리있는 비판
