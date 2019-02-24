@@ -1,7 +1,9 @@
 ---
-title: "정부의 HTTPS SNI 차단"
+title: "HTTPS SNI 차단 규제에 관해"
 tags: [writing, network, https]
 ---
+
+SNI 필드를 이용한 HTTPS 차단 기법을 알아보았다
 <!--more-->
 
 ## 인터넷 사이트 차단
