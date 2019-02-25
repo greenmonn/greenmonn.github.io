@@ -5,7 +5,7 @@ title: About
 
 # About
 
-I'm Greenmon, a clumsy green monster.
+I'm Greenmon, A little and clumsy green monster.
 
 ![greenmon](/assets/images/Greenmon-1.png)
 ![greenmon](/assets/images/Greenmon-2.png)
