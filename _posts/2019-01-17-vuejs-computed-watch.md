@@ -10,9 +10,9 @@ tags: [web, javascript, vuejs, TIL]
 ## computed 속성
 VueJS 공식 문서에서는 템플릿 내에 복잡한 표현식을 넣는 대신 `computed`를 사용하는 것을 권장하고 있다.
 
-```
+```html
 <div id="example">
-  {{ message.split('').reverse().join('') }}
+  {{ "{{ message.split('').reverse().join('')" }} }}
 </div>
 ```
 
