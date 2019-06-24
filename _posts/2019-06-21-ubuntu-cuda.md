@@ -1,8 +1,11 @@
 ---
-title: "Ubuntu 18.04에 PyTorch를 위한 CUDA 설정"
+title: "Ubuntu 18.04 CUDA + PyTorch 설치"
 tags: [deeplearning, reinforcement-learning]
 ---
 
+Ubuntu 18.04에 PyTorch를 위한 CUDA 설정
+
+<!--more-->
 
 연구실에서 새롭게 학습용 컴퓨터를 구입했다. 스펙은 간단히 라이젠 스레드리퍼 2990WX (32코어) * TITAN RTX * 128GB RAM. 눈 돌아가는 스펙이지만 딥러닝 세계에선 이 정도는 아무것도 아니야- 쿨한 선배들의 태도에 경외심을 느꼈다.
 
@@ -179,3 +182,8 @@ $ pyenv activate py37
 
 $ pip install torch torchvision
 ```
+
+
+### PyTorch에서 CUDA가 잘 작동하는지 확인
+
+![](https://www.dropbox.com/s/blt8pcst7eelo3e/pytorch_cuda.png?raw=1)
