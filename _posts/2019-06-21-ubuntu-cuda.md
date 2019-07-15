@@ -1,6 +1,7 @@
 ---
 title: "Ubuntu 18.04 CUDA + PyTorch 설치"
 tags: [deeplearning, reinforcement-learning]
+comments: true
 ---
 
 Ubuntu 18.04에 PyTorch를 위한 CUDA 설정

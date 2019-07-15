@@ -6,3 +6,5 @@ plugins:
 highlighter: rouge
 
 excerpt_separator: "<!--more-->"
+
+url: "https://greenmon.dev"
