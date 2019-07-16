@@ -203,3 +203,11 @@ $$ MSE = (target - prediction)^2 = (R_{t+1} + \gamma Q(S_{t+1}, A_{t+1}) - Q(S_t
 - http://www.modulabs.co.kr/RL_library/2621
 - https://hijigoo.github.io/reinforcement%20learning/2019/02/28/rl-dynamic-programming/
 - 파이썬과 케라스로 배우는 강화학습, 위키북스
+
+
+<script>
+var disqus_config = function () {
+                this.page.url = '{{ site.url }}{{ page.url }}';  // Replace PAGE_URL with your page's canonical URL variable
+                this.page.identifier = '{{ page.title }}-{{ page.date }}'; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+</script>
