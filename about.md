@@ -5,7 +5,7 @@ permalink: /about/
 ---
 
 > Do you want to know about the person hiding inside Greenmon?
-> See [Curriculum Vitae](/assets/Curriculum_Vitae_190716.pdf).
+> See [Curriculum Vitae](/assets/Curriculum_Vitae_190912.pdf).
 
 # About
 
