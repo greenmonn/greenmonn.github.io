@@ -4,7 +4,7 @@ tags: [deep-learning, CNN]
 ---
 
 다양한 Network Pruning 기법들을 정리해보았다.
-Characteristics of Pruning Algorithms
+(Characteristics of Pruning Algorithms)
 
 <!--more-->
 
