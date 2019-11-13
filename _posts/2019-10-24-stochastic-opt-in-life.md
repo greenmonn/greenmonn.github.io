@@ -1,6 +1,6 @@
 ---
 title: "최적화 기법과 삶 속의 선택에 대한 단상"
-tags: []
+tags: [essay]
 ---
 
 Analogy between Metaheuristic Search Techniques and Life
