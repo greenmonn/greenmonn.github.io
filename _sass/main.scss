@@ -1,173 +1,224 @@
 body {
-    font-family: Muli, 'Apple SD Gothic Neo', 'Noto Sans KR', sans-serif;
-    font-weight: 400;
-    font-style: normal;
-    line-height: 1;
-    color: #6C7A89;
+  font-family: Muli, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+  line-height: 1;
+  color: #6c7a89;
 
-    margin-bottom: 5%;
+  margin-bottom: 5%;
 }
 
 section {
-    margin-top: 40px;
+  margin-top: 40px;
 }
 
 pre {
-    background-color: #012239
+  background-color: #012239;
 }
 
 @media only screen and (min-width: 1220px) {
-    section {
-        margin-top: 80px;
-    }
+  section {
+    margin-top: 80px;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
-    section {
-        margin-top: 60px;
-    }
+  section {
+    margin-top: 60px;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-    section {
-        margin-top: 50px;
-    }
+  section {
+    margin-top: 50px;
+  }
 }
 
 .navbar {
-    margin-top: 40px;
+  margin-top: 40px;
 
-    .navbar-title {
-        &:hover{
-            color: green;
-        }
-        font-size: 25px;
-        font-weight: 800;
-        letter-spacing: -.02em;
-        line-height: 1;
-        color: #2A2F36;
-        padding: 0;
+  .navbar-title {
+    &:hover {
+      color: green;
     }
+    font-size: 25px;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+    line-height: 1;
+    color: #2a2f36;
+    padding: 0;
+  }
 
-    .navbar-menu {
-        .navbar-end {
-            .navbar-item {
-                &:hover {
-                    color: green;
-                }
-            }
+  .navbar-menu {
+    .navbar-end {
+      .navbar-item {
+        &:hover {
+          color: green;
         }
+      }
     }
+  }
 }
 
 .wrap {
-    position: relative;
-    margin: 0 auto;
-    padding: 0 30px;
-    max-width: 500px;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 30px;
+  max-width: 500px;
 }
 
 @media only screen and (min-width: 768px) {
-    .wrap {
-        padding: 0;
-        max-width: 70%
-    }
+  .wrap {
+    padding: 0;
+    max-width: 70%;
+  }
 }
 
 @media only screen and (min-width: 1024px) {
-    .wrap {
-        max-width: 65%
-    }
+  .wrap {
+    max-width: 65%;
+  }
 }
 
 @media only screen and (min-width: 768px) {
-    .content-wrap {
-        width: 90%;
-        margin: 0 auto;
-    }
+  .content-wrap {
+    width: 90%;
+    margin: 0 auto;
+  }
 }
 
 .intro {
-    div {
-        p {
-            line-height: 1.3;
-        }
+  div {
+    p {
+      line-height: 1.3;
+      font-family: Inconsolata, "Apple SD Gothic Neo", "Noto Sans KR",
+        sans-serif;
     }
+  }
 }
 
-.gallery {
-    padding: 0 5px;
+.posts {
+  .post-dates {
+    border-right: 1px solid coral;
+    padding-right: 2rem;
+    text-align: right;
+  }
+  ul {
+    margin: 0;
 
-    .columns {
-        margin: 0;
+    li {
+      height: 60px;
 
-        .column {
-            width: 100%;
-            padding: 5px;
+      .explain {
+        font-size: smaller;
+        font-family: Inconsolata, "Apple SD Gothic Neo", "Noto Sans KR",
+          sans-serif;
+        margin-left: 5px;
+      }
 
-            .content-item {
-                position: relative;
-                
-                &:hover {
-                    .overlay {
-                        opacity: 0.7;
-                    }
-                }
-
-                img {
-                    width: 100%;
-                    padding: 4px 0;
-                }
-    
-                .video-responsive {
-                    position: relative;
-                    height: 40%;
-                    padding-bottom: 56.25%;
-
-                    iframe {
-                        position: absolute;
-
-                        padding: 4px 0;
-
-                        left: 0;
-                        top: 0;
-                        height: 100%;
-                        width: 100%;
-                    }
-                }
-
-                .overlay {
-                    position: absolute;
-                    top: 4px;
-                    bottom: 4px;
-                    left: 0;
-                    right: 0;
-                    height: calc(100% - 8px);
-                    width: 100%;
-                    opacity: 0;
-                    transition: .5s ease;
-                    background-color: #2A2F36;
-
-                    .text {
-                        color: white;
-                        position: absolute;
-                        top: calc(50% - 2px);
-                        left: 50%;
-                        -webkit-transform: translate(-50%, -50%);
-                        -ms-transform: translate(-50%, -50%);
-                        transform: translate(-50%, -50%);
-                        text-align: center;
-                    }
-                }
-            }
-        }
+      .date {
+        font-size: smaller;
+        font-weight: 700;
+        color: green;
+        font-family: Inconsolata, "Apple SD Gothic Neo", "Noto Sans KR",
+          sans-serif;
+      }
     }
+  }
+
+  .post-title {
+    color: black;
+    font-weight: 600;
+  }
+}
+.gallery {
+  padding: 0 5px;
+
+  .columns {
+    margin: 0;
+
+    .column {
+      width: 100%;
+      padding: 5px;
+
+      .content-item {
+        position: relative;
+
+        &:hover {
+          .overlay {
+            opacity: 0.7;
+          }
+        }
+
+        img {
+          width: 100%;
+          padding: 4px 0;
+        }
+
+        .video-responsive {
+          position: relative;
+          height: 40%;
+          padding-bottom: 56.25%;
+
+          iframe {
+            position: absolute;
+
+            padding: 4px 0;
+
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+          }
+        }
+
+        .overlay {
+          position: absolute;
+          top: 4px;
+          bottom: 4px;
+          left: 0;
+          right: 0;
+          height: calc(100% - 8px);
+          width: 100%;
+          opacity: 0;
+          transition: 0.5s ease;
+          background-color: #2a2f36;
+
+          .text {
+            color: white;
+            position: absolute;
+            top: calc(50% - 2px);
+            left: 50%;
+            -webkit-transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            transform: translate(-50%, -50%);
+            text-align: center;
+          }
+        }
+      }
+    }
+  }
+}
+
+a.noblue {
+  color: #6c7a89;
+  &:hover {
+    color: orangered;
+  }
+}
+
+.nerdy-font {
+  font-family: Inconsolata;
 }
 
 .current {
-    color: green;
+  color: green;
 }
 
 .greenmon {
-    color: green;
+  color: green;
+}
+
+footer {
+  margin-top: 50px;
 }

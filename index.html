@@ -5,14 +5,69 @@ title: Home
 
 <section class="intro">
     <div class="wrap">
-        <h1>Every thought and idea of greenmon, <br />who is a naive programmer, or writer</h1>
         <p>
             I think that even the first naive try is worth to be recorded. 
             <br /><small>설익은 생각을 기록합니다. 조금씩 다듬어 나가는 중입니다.</small>
         </p>
+
+        <p>
+        <span class="icon"><i class="fab fa-github"></i></span> 
+        <a href="//github.com/greenmonn">@greenmonn</a> <br>
+        <span class="icon"><i class="fab fa-instagram"></i></span>
+        <a href="//instagram.com/___0one">@0one</a> <br>
+        <span class="icon"><i class="fab fa-youtube"></i></span>
+        <a class="noblue" href="//www.youtube.com/playlist?list=PLoIcW4SY1awPP3MDN-JSvmWybJyVjxi2H">some piano recordings</a> <br>
+        <span class="icon"><i class="fas fa-music"></i></span>
+        <a class="noblue" href="https://www.youtube.com/playlist?list=PLoIcW4SY1awPY1JoTqOwgK3nz2FOft0aX">visit my music archive</a>
+        </p>
     </div>
 </section>
 
+<section class="posts">
+<div class="wrap">
+
+  <div class="columns is-mobile">
+    <div class="column is-narrow">
+        <ul class="posts-list post-dates">
+        {% for post in site.posts offset:0 limit:6 %}
+                {% unless post.tags contains 'draft' %}
+                <li>
+                    <span class="date">{{ post.date | date: "%Y.%m.%d" }} </span>
+                </li>
+                {% endunless %}
+        {% endfor %}
+        </ul>
+    </div>
+
+    <div class="column">
+        <ul class="posts-list">
+            {% for post in site.posts  limit:6 %}
+            {% unless post.tags contains 'draft' %}
+            <li>
+                <a class="post-title" href="{{ post.url }}">{{ post.title }}</a> | 
+                <span class="explain">{{ post.excerpt | strip_html | truncatewords:75 }}</span>
+                <br>
+                {% for tag in post.tags %}
+                <a href="/tags#{{ tag }}"><span class="tag is-light">#{{ tag }}</span></a>
+                {% endfor %}
+            </li>
+            {% endunless %}
+
+            {% endfor %}
+        </ul>
+    </div>
+  </div>
+  <p>
+    <a class="noblue nerdy-font" href="/blog"><i class="fas fa-external-link-alt"></i> See more posts...</a>
+  </p>
+
+
+</div>
+</section>
+
+<section>
+
+</section>
 
 <section class="gallery">
 
@@ -20,41 +75,18 @@ title: Home
         <div class="columns is-mobile">
             <div class="column">
                 <div class="content-item">
-                    <img src="/assets/images/gallery/blockchain.jpg">
-                    <a href="/tags#blockchain" class="overlay">
-                        <h1 class="text">Blockchain</h1>
-                    </a>
-                </div>
-                <div class="content-item">
                     <img src="/assets/images/gallery/writings.jpg">
                     <a href="/tags#essay" class="overlay">
                         <h1 class="text">Essay</h1>
                     </a>
                 </div>
-                <div class="content-item">
-                    <img src="/assets/images/gallery/travel.jpg">
-                    <a href="/tags#travel" class="overlay">
-                        <h1 class="text">Travel</h1>
-                    </a>
-                </div>
+                
             </div>
             <div class="column">
                 <div class="content-item">
                     <img src="/assets/images/gallery/webdev.jpg">
-                    <a href="/tags#web" class="overlay">
-                        <h1 class="text">Web Development</h1>
-                    </a>
-                </div>
-                <div class="content-item">
-                    <div class="video-responsive">
-                        <iframe src="https://www.youtube.com/embed/videoseries?list=PLoIcW4SY1awPY1JoTqOwgK3nz2FOft0aX"
-                            frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
-                    </div>
-                </div>
-                <div class="content-item">
-                    <img src="/assets/images/gallery/piano.jpg">
-                    <a href="https://www.youtube.com/playlist?list=PLoIcW4SY1awPP3MDN-JSvmWybJyVjxi2H" target="blank" class="overlay">
-                        <h1 class="text">Piano Recordings</h1>
+                    <a href="/tags#deep-learning" class="overlay">
+                        <h1 class="text">Tech</h1>
                     </a>
                 </div>
             </div>
@@ -62,3 +94,13 @@ title: Home
     </div>
 
 </section>
+
+<footer class="footer">
+  <div class="content has-text-centered">
+    <p>
+      Served by <a href="https://jekyllrb.com/">Jekyll</a> and <a href="https://pages.github.com/">Github Pages</a>. Styled by <a href="https://bulma.io">Bulma</a>
+      <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+      is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+    </p>
+  </div>
+</footer>
