@@ -11,9 +11,11 @@ permalink: /blog/
 <section>
   <ul class="posts-list">
     {% for post in site.posts %}
+    {% unless post.tags contains 'draft' %}
     <li>
       {% include post_item.html %}
     </li>
+    {% endunless %}
 
     {% endfor %}
   </ul>
