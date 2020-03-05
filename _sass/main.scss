@@ -37,6 +37,10 @@ pre {
 .navbar {
   margin-top: 40px;
 
+  .navbar-burger {
+    font-family: Inconsolata;
+  }
+
   .navbar-title {
     &:hover {
       color: green;
@@ -50,6 +54,9 @@ pre {
   }
 
   .navbar-menu {
+    font-family: Inconsolata;
+    font-weight: 700;
+
     .navbar-end {
       .navbar-item {
         &:hover {
@@ -126,7 +133,7 @@ pre {
     }
   }
 
-  .post-title {
+  .post-list-title {
     color: black;
     font-weight: 600;
   }

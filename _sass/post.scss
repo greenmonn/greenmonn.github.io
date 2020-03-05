@@ -20,6 +20,10 @@
       padding-bottom: 0.2rem;
     }
     a {
+      span {
+        font-family: "Inconsolata", "Noto Sans KR";
+      }
+
       @media only screen and (max-width: 768px) {
         span {
           margin: 0.2rem 0.1rem;
@@ -36,6 +40,7 @@ blockquote {
 
 .tag-cloud {
   margin-top: 4%;
+  font-family: "Inconsolata", "Noto Sans KR";
 
   li {
     display: inline-block;
@@ -46,6 +51,10 @@ blockquote {
       padding: 0.2rem 0.1rem;
     }
   }
+}
+
+.post-title {
+  font-family: "KoPub Batang", "Inconsolata", "Noto Sans KR";
 }
 
 .post-date {
