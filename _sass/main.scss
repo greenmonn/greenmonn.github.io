@@ -208,7 +208,7 @@ a.noblue {
 }
 
 .nerdy-font {
-  font-family: Inconsolata;
+  font-family: Inconsolata, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 }
 
 .current {
@@ -221,4 +221,8 @@ a.noblue {
 
 footer {
   margin-top: 50px;
+  p {
+    font-size: 0.9rem;
+    font-family: Inconsolata, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  }
 }

@@ -1,93 +1,94 @@
 .posts-list {
-    margin-top: 4%;
+  margin-top: 4%;
 
-    li {
-        list-style: none;
-        margin-bottom: 3rem;
+  li {
+    list-style: none;
+    margin-bottom: 3rem;
 
-        h3 {
-            a {
-                color: #2a2f36;
-                &:hover {
-                    color: green;
-                }
-            }
+    h3 {
+      a {
+        color: #2a2f36;
+        &:hover {
+          color: green;
         }
-        h4 {
-            color: #6c7a89;
-            font-weight: 400;
-            line-height: 1.6;
-            padding-bottom: 0.2rem;
-        }
-        a {
-            @media only screen and (max-width: 768px) {
-                span {
-                    margin: 0.2rem 0.1rem;
-                }
-            }
-        }
+      }
     }
+    h4 {
+      color: #6c7a89;
+      font-weight: 400;
+      line-height: 1.6;
+      padding-bottom: 0.2rem;
+    }
+    a {
+      @media only screen and (max-width: 768px) {
+        span {
+          margin: 0.2rem 0.1rem;
+        }
+      }
+    }
+  }
 }
 
 blockquote {
-    margin-top: 30px;
-    margin-bottom: 30px;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .tag-cloud {
-    margin-top: 4%;
+  margin-top: 4%;
 
+  li {
+    display: inline-block;
+  }
+
+  @media only screen and (max-width: 768px) {
     li {
-        display: inline-block;
+      padding: 0.2rem 0.1rem;
     }
-
-    @media only screen and (max-width: 768px) {
-        li {
-            padding: 0.2rem 0.1rem;
-        }
-    }
+  }
 }
 
 .post-date {
-    text-align: right;
+  text-align: right;
 }
 
 .post-content {
-    margin-top: 7%;
+  margin-top: 7%;
+  font-family: "Nanum Myeongjo", "Inconsolata", "Noto Sans KR";
 
-    img {
-        margin: 6% 0;
-        text-align: center;
+  img {
+    margin: 6% 0;
+    text-align: center;
+  }
+
+  img + em {
+    display: block;
+    font-size: smaller;
+    margin-bottom: 50px;
+  }
+
+  pre {
+    code {
+      font-size: 1em;
+      line-height: 1.6;
+
+      background: transparent;
     }
 
-    img + em {
-        display: block;
-        font-size: smaller;
-        margin-bottom: 50px;
+    @media only screen and (min-width: 768px) {
+      code {
+        font-size: 1.1em;
+      }
     }
 
-    pre {
-        code {
-            font-size: 1em;
-            line-height: 1.6;
-
-            background: transparent;
-        }
-
-        @media only screen and (min-width: 768px) {
-            code {
-                font-size: 1.1em;
-            }
-        }
-
-        @media only screen and (min-width: 1220px) {
-            code {
-                font-size: 1.2em;
-            }
-        }
+    @media only screen and (min-width: 1220px) {
+      code {
+        font-size: 1.2em;
+      }
     }
+  }
 }
 
 #disqus_thread {
-    margin-top: 10%;
+  margin-top: 10%;
 }
