@@ -119,10 +119,27 @@ code2vec과 결과를 비교하기도 했는데, 오히려 훨씬 더 단순한 
 
 ## Testing & Debugging
 
--   Causal Testing: Understanding Defects' Root Causes
--   A Study on the Lifecycle of Flaky Tests
+### Causal Testing: Understanding Defects' Root Causes
+
+-   Root Cause:
+    Debugging의 과정 (fault localization, identifying patch) 자체의 의도를 생각해보면 defect의 root cause를 찾는 것이라고도 설명할 수 있겠다. 우리가 관찰할 수 있는 것은 결과로 나타난 'buggy behavior'이다. (test failure, crash의 형태 - 또 뭐가 있을까?) 이 논문에서는 buggy behavior을 설명할 수 있는 execution을 찾아내고 효과적으로 buggy behavior과 관련된 test를 generation하는 테크닉을 소개한다. (what is the theory of counterfactual causality?)
+
+-   기존 debugging tool의 문제점:
+    "디버깅을 어떻게 하면 좀더 쉽게 할 수 있을까?" 라는 SE 연구의 가장 주요한 질문으로부터 파생된 기존의 접근들은 test case들의 pass/fail 결과들을 바탕으로 코드 라인의 버그를 localize하는 SBFL, 버그 리포트나 stack trace들의 정보를 활용하는 IR-based FL, 그리고 fail을 발생시키는 input의 요소를 찾는 delta debugging 등이 있다. 이러한 테크닉들을 developer들에게 전달되는 bug-related information의 양을 줄이고 최대한 유용한 정보들만을 참조할 수 있도록 하는 접근 방법으로 통틀어 설명할 수도 있을 것 같다. 하지만, 기존에 관찰된 behavior만을 이용해서 정보의 양을 '충분히' 줄이기는 쉽지 않고, 코드의 어느 부분이 failure에 기여하는지는 알 수 있지만 '왜' 이런 behavior가 발생했는지에 대한 설명은 누락될 수밖에 없다. 실제로 개발자의 manual한 debugging 과정을 생각해 보면, failing 하는 케이스에 대해서 좀더 세세하게 테스트를 만들어 나가거나 관련된 코드의 stopping point를 찍어서 각 변수들의 값들을 확인하는 식으로 진행될 것이다. Causal Testing의 기본적인 아이디어는 fail하는 테스트의 execution, 또는 input을 "아주 작은 정도"로 mutate하면서 이 (input의, 또는 execution의) 변경과 behavior 사이의 causal relationship을 도출해내는 것이다.
+
+-   Novelty: 지금껏 statistical causal inference를 root cause analysis에 도입하고자 하는 시도는 존재했지만 [Causal inference
+    for statistical fault localization: ISSTA '10, Mitigating
+    the confounding effects of program dependences for effective fault localization, FSE '11, Debugging with Intelligence via Probabilistic Inference] 프로그램 내의 element들에 대한 modeling에 초점을 맞춤으로써 faulty statement를 포함한 위치를 좁히는 데에 집중했다면, 이 연구에서의 접근은 fail을 일으키는 **가장 작은 단위**(text의 similarity 뿐만 아니라 execution trace의 similarity도 고려한다) 의 input purturbation을 수행하고, 이때 execution trace의 difference를 캡쳐함으로써 'cause'에 대한 결과물로 'location'이 자연스럽게 도출되도록 만들었다는 점에서 다른 접근을 취한 것 같다. (비슷한 work이 있었는데 내가 모르는 걸수도 있다)
+
+-   HOLMES: A causal testing prototype
+    프로토타입은 Eclipse plugin 형태로 구현하였는데, 셜록 홈즈의 이름을 따서 툴 이름을 HOLMES로 지은 점이 재미있었다.
+
+-   Comment: Debugging 과정을 자동화하는 과정에 대해 생각할 때, 지금껏 꽤 다양한 기술들이 제시되었기 때문에 존재하는 연구의 정확도를 어떻게 더 올릴 수 있을까에 대한 생각에 매몰되기가 쉬운 것 같다. 하지만 실제로 개발자들이 실제로 디버깅을 하는 과정에서, "where"이 아닌 "why"에 대한 질문에서부터 시작한다는 사실을 포착함으로써 새로운 방향을 제시한 연구라고 생각한다. 다만 테스트의 input을 modify하는 경우는 string 타입으로만 한정되어 있는데, 다양한 input에 대해서도 flexible하게 활용할 수 있을지 좀더 탐구해 보고 싶다.
+
+### A Study on the Lifecycle of Flaky Tests
 
 ## Program Analysis
 
--   HyDiff: Hybrid Differential Software Analysis
--   HARP: Holistic Analysis for Refactoring Python-Based Analytics Programs
+### HyDiff: Hybrid Differential Software Analysis
+
+### HARP: Holistic Analysis for Refactoring Python-Based Analytics Programs
