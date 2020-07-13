@@ -85,7 +85,43 @@ failure-inducing change의 minimal set을 구하기 위해 사용되는 방식�
 
 -   Official Website: https://deepimportance.github.io
 
-Deep Learning System을 테스팅하는 데에 있어 testing adequacy criteria를 어떻게 설정할 것인지에 대한 논의가 꾸준히 있어왔다. 이번에 소개된 논문은 neuron의 causality를 기반으로 한다는 점에서 관심이 갔다. semantically-diverse test set generation
+Deep Learning System을 테스팅하는 데에 있어 testing adequacy criteria를 어떻게 설정할 것인지에 대한 논의가 꾸준히 있어왔다. 이번에 소개된 논문은 neuron의 causality를 기반으로 한다는 점에서 관심이 갔다. pre-trained DNN을 사용하여, training set을 사용하여 internal neuron 간의 contribution을 측정하게 된다.
+
+결과적으로 clustering을 통해 important neuron의 cluster들이 만들어지고, 더 다양한 cluster들의 combination을 포함할수록 coverage가 높다고 판단할 수 있다.
+
+coverage를 결정하는 과정은 크게 세 가지 step으로 이루어지는데,
+
+**(1) Neuron Importance Analysis** <br />
+Deep Learning Model을 구성하는 뉴런들을 생각할 때, decision-making에 특별히 중요한 역할을 하는 뉴런들이 존재할 것이다. 각 뉴런의 importance를 어떻게 결정할 수 있을까? 아주 단순하게, 어떤 input x에 대한 각 layer의 output을 f(x)라고 할 때, f(x)를 decompose하여 이 결과에 이전 뉴런들의 contribution을 계산할 수 있을 것이다.
+<br />
+![](https://deepimportance.github.io/assets/images/heatmap6.png)
+<br />
+위의 MNIST input hitmap을 보면, 최종 classification decision에 대해 각 input feature로 사용되는 픽셀들의 중요도를 표현할 수 있음을 알 수 있다.
+
+(_추측: 아마 여기서 top-k important neuron을 고르고 이들을 기준으로 clustering을 수행하는 것 같다. 그러면 k는 어떻게 고르지?_)
+
+-   여기서는 layer-wise iteration을 수행하기 때문에 각 layer를 구성하는 neuron, Model에 input으로 들어가는 feature의 중요도를 지속적으로 tracking할 수 있다면 문제가 되는 input이 '왜 안되는지' 설명하는 데에 도움이 되지 않을까? (input의 어떤 요소들이 결과에 많은 영향을 미치는지?)
+
+**(2) Important Neurons Clustering** <br />
+
+-   Activation trace (vector of activation values from the training set - length가 전체 training set의 사이즈인 vector)를 k-means algorithm으로 clustering해서, group을 만든다. 왜 clustering을 하는 것일까? bucket 기반으로 activation value range를 grouping하는 k-multisection neuron coverage 같은 경우 bucket의 갯수와 그 range에 크게 영향을 받을 수밖에 없는데, clustering과 같이 dynamic하게 grouping을 하는 경우에는 각 neuron의 semantically different feature을 사용하기 때문에 좀더 adaptive한 set들을 얻을 수 있을 것이다. clustering을 함으로써 cyclomatic complexity를 낮추고 practical한 coverage 척도를 얻을 수 있는 것이다.
+
+-   Cyclomatic Complexity: 소스 코드의 복잡도를 나타내는 metric, 프로그램의 제어 흐름을 graph, node, edge로 표현하고 (E(G) - N(G) + 2)의 간단한 계산식을 사용해서 표현할 수 있다.
+
+-   형성되는 클러스터는 각 important neuron에 대해, activation value range로 표현될 것이다.
+
+**(3) Importance-driven Coverage** <br />
+각 input에 대해서 INCC(Important Neurons Cluster Combinations) 벡터를 구하고, INCC value가 기존 test suite input에 대해서 새로운 feature (새로운 important neuron + activation value cluster 조합)을 도입할수록 IDC(Importance-driven Coverage)는 올라간다.
+
+-   How can `DeepImportance` improve DNN testing practice?Important neuron들을 identify하고, 이들을 얼마나 '다양하게' cover하는지에 대한 adequacy criteria를 제공함에 따라서 semantically-diverse test set generation이 가능하다. 기존의 attack strategy로 생성된 adversarial example 중 어떤 것들이 실제로 semantic diversity를 도입하는지에 대한
+
+-   Q. 단순히 엄청나게 많은 Adversarial example들을 새롭게 모델에 feeding해서 retrain한다고 해서 성능이 높아질까? 오히려 낮아지는 경우도 있을까?
+
+-   [Cleverhans](https://github.com/tensorflow/cleverhans): Adversarial example들로 DL system들을 benchmarking할 수 있는 Python Library라고 함
+
+-   Soundness에 대한 증명이 따로 있다. 즉, 새롭게 추가되는 input의 INCC가 기존에 cover되지 않아야만 IDC가 올라간다는 것. [여기](https://github.com/DeepImportance/deepimportance.github.io/blob/master/assets/pdf/DeepImportanceProof.pdf)에서 확인할 수 있다.
+
+-   Input이 Semantically Different하다는 의미는 정확히 뭘까? noise를 추가하는 adversarial input이 semantic difference를 보장한다고 할 수 있을까?
 
 ## Machine Learning for System
 
