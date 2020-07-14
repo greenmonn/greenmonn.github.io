@@ -113,7 +113,7 @@ Deep Learning Model을 구성하는 뉴런들을 생각할 때, decision-making�
 **(3) Importance-driven Coverage** <br />
 각 input에 대해서 INCC(Important Neurons Cluster Combinations) 벡터를 구하고, INCC value가 기존 test suite input에 대해서 새로운 feature (새로운 important neuron + activation value cluster 조합)을 도입할수록 IDC(Importance-driven Coverage)는 올라간다.
 
--   How can `DeepImportance` improve DNN testing practice?Important neuron들을 identify하고, 이들을 얼마나 '다양하게' cover하는지에 대한 adequacy criteria를 제공함에 따라서 semantically-diverse test set generation이 가능하다. 기존의 attack strategy로 생성된 adversarial example 중 어떤 것들이 실제로 semantic diversity를 도입하는지에 대한
+-   How can `DeepImportance` improve DNN testing practice?: Important neuron들을 identify하고, 이들을 얼마나 '다양하게' cover하는지에 대한 adequacy criteria를 제공함에 따라서 semantically-diverse test set generation이 가능하다. 기존의 attack strategy로 생성된 adversarial example 중 어떤 것들이 실제로 semantic diversity를 도입하는지에 대한
 
 -   Q. 단순히 엄청나게 많은 Adversarial example들을 새롭게 모델에 feeding해서 retrain한다고 해서 성능이 높아질까? 오히려 낮아지는 경우도 있을까?
 
@@ -136,7 +136,7 @@ Deep Learning Model을 구성하는 뉴런들을 생각할 때, decision-making�
     -   detect more, inspect less (loop)
     -   human error
     -   When to stop?
-    -   -   training data labeling cost
+        -   training data labeling cost
 -   Why precision is not needed? (collect as much as we can)
 
 ### [2] How Bugs Are Born: A model to identify how bugs are introduced in software components (extrinsic / intrinsic bugs)
