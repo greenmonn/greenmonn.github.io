@@ -71,13 +71,12 @@ input의 어떤 부분과 특정 program element의 interaction이 버그를 일
 
 -   Target Problem: Fault가 program code가 아니라 input 자체에 있을 수도 있을까? specification에 포함되지 않는 invalid input이 바로 그런 예시일 것이다. 이 논문은 그런 corrupted data를 program이 processing할 수 있는 형태로 고치려는 시도에서 출발한다. Program analysis를 사용하지 않고 black-box approach로 input repair을 접근했다는 점이 독창적인데, delta debugging에서 착안하여 (방식은 같지만 목적은 반대) invalid input fragment를 빠르게 찾아내고 동시에 content를 최대한 보존하는 input을 만들어내는 것이다. 이러한 approach를 delta debugging(ddmin)의 반대인 `ddmax`라고 이름붙였다.
 
-- Invalid input in the wild: 실제로 JSON, Wave. OBJ 파일이나 DOT 파일을 input으로 사용하는 경우에서, input 자체가 문제가 되는 경우가 얼마나 있는지 확인하기 위한 empirical study를 먼저 진행했다. 제시한 경우들을 보면 input 자체가 따라야 할 Grammar이 있는 형태들인데, lexical 버전의 ddmax의 경우에는 input의 grammar check를 하지 않고 단지 program exit status만을 feedback으로 활용하여 passing input의 maximum subset을 찾는다. (그런데 논문에는 `ANTLER` 자체에서 제공하는 `error recovery strategy`를 활용한다고는 되어 있다. 그러고 나서 edit distance 등으로 원래의 failing input과 얼마나 다른지를 계산한다고 하는데..) syntactic ddmax (like tree delta debugging)의 경우에는 `ANTLR`을 이용하여 input의 초기 AST 상태를 파싱하기는 하지만, 여전히 repair 과정에서 Grammar에 대한 정보를 사용하지는 않는다.
+-   Invalid input in the wild: 실제로 JSON, Wave. OBJ 파일이나 DOT 파일을 input으로 사용하는 경우에서, input 자체가 문제가 되는 경우가 얼마나 있는지 확인하기 위한 empirical study를 먼저 진행했다. 제시한 경우들을 보면 input 자체가 따라야 할 Grammar이 있는 형태들인데, lexical 버전의 ddmax의 경우에는 input의 grammar check를 하지 않고 단지 program exit status만을 feedback으로 활용하여 passing input의 maximum subset을 찾는다. (그런데 논문에는 `ANTLER` 자체에서 제공하는 `error recovery strategy`를 활용한다고는 되어 있다. 그러고 나서 edit distance 등으로 원래의 failing input과 얼마나 다른지를 계산한다고 하는데..) syntactic ddmax (like tree delta debugging)의 경우에는 `ANTLR`을 이용하여 input의 초기 AST 상태를 파싱하기는 하지만, 여전히 repair 과정에서 Grammar에 대한 정보를 사용하지는 않는다.
 
-- Lexical Repair vs. Syntactic Repair
-Lexical Repair은 input을 단순히 sequence로 보고 나누는 반ㅁ년, Syntactic Repair은 기본적으로 input을 structure로 파싱해서 tree 단위로 delta debugging scheme을 적용한다.
+-   Lexical Repair vs. Syntactic Repair
+    Lexical Repair은 input을 단순히 sequence로 보고 나누는 반ㅁ년, Syntactic Repair은 기본적으로 input을 structure로 파싱해서 tree 단위로 delta debugging scheme을 적용한다.
 
-- Evaluation: 실제로 ddmax가 얼마나 input을 많이 고칠 수 있었는지에 대해서는, real-world crawling example과 이들에 mutation을 해서 만들어낸 추가적인 데이터에 대해서 실험했다. syntatic하게 input의 AST를 만들어서 repair를 수행한 버전이 가장 좋은 repair 성능을 보였다. (더 많은 passing input을 generate하기도 했고, 만들어진 data의 loss 측면에서도 더 좋았다)
-
+-   Evaluation: 실제로 ddmax가 얼마나 input을 많이 고칠 수 있었는지에 대해서는, real-world crawling example과 이들에 mutation을 해서 만들어낸 추가적인 데이터에 대해서 실험했다. syntatic하게 input의 AST를 만들어서 repair를 수행한 버전이 가장 좋은 repair 성능을 보였다. (더 많은 passing input을 generate하기도 했고, 만들어진 data의 loss 측면에서도 더 좋았다)
 
 모든 실험이 아마도 저자의 노트북일 Lenovo Thinkpad에서 이뤄졌다고 하는데, 생각보다 소박한 시스템(?)이라 인상에 남는다. 재택 근무 중이셨을까 (...)
 
@@ -87,16 +86,16 @@ Logging할 때 어떤 variable을 tracking할 지 추천해 준다면 어떨까?
 
 이러한 두 가지 challenge를 극복하고자 multi-label classification problem 대신 representation learning problem으로 접근한다. logging statement 주변의 코드 snippet을 RNN encoder에 통과시켜서 적절한 representation을 배우도록 하고, 두 번째 단계로 이 representation을 binary classifier에 통과시켜서 (로깅할지, 말지) 둘 중 하나를 선택하게 하는 것이다. 직관적으로 보면 각 token이 해당 프로그램 스니펫에서 어떤 역할을 하는지를 먼저 representation으로 배운 다음에, 이렇게 정제된 정보 위에서 logging을 해야 할지 말지에 대한 classification을 수행한다는 아이디어가 representation의 활용을 현명하게 한 예시(?) 같아서 굉장히 마음에 들었다.
 
-* novel method for mapping program tokens into word embeddings: making use of pretrained word embeddings of natural language tokens - 아직 이 과정에 어떤 novelty가 있는지 깊게 살펴보지는 못했지만, 역할을 표현하는 데에 natural language token이 과연 필요할까? 에 대한 의문이 들었다. 내가 생각한 방향과 논문이 생각한 방향을 비교해 볼 것.
- 
-* representation learning: 학습 데이터가 굉장히 복잡하고 큰 dimension을 가지고 있더라도 깊고 방대한 neural network를 통해 데이터의 선형 분리가 가능한 형태의 representation을 도출할 수 있다는 것.
+-   novel method for mapping program tokens into word embeddings: making use of pretrained word embeddings of natural language tokens - 아직 이 과정에 어떤 novelty가 있는지 깊게 살펴보지는 못했지만, 역할을 표현하는 데에 natural language token이 과연 필요할까? 에 대한 의문이 들었다. 내가 생각한 방향과 논문이 생각한 방향을 비교해 볼 것.
+
+-   representation learning: 학습 데이터가 굉장히 복잡하고 큰 dimension을 가지고 있더라도 깊고 방대한 neural network를 통해 데이터의 선형 분리가 가능한 형태의 representation을 도출할 수 있다는 것.
 
 ### [3] Boosting Automated Program Repair with Bug-Inducing Commits
 
 (NIER: New Ideas and Emerging Results)
 이전에 Historial Spectrum based Fault Localization의 저자인 Ming Wen 씨가 APR에 대해서도 멋진 아이디어를 꺼내놓았다.
 
-search-based patch generation에서는 ingredient space와 mutation operator를 어떻게 정의하는지에 대한 결정을 통해 search space가 정의된다. 
+search-based patch generation에서는 ingredient space와 mutation operator를 어떻게 정의하는지에 대한 결정을 통해 search space가 정의된다.
 
 지금까지 해당 프로젝트 자체의 history에서 생성된 patch와 다른 프로젝트들에서 수집된 patch들의 fixing pattern들을 학습하여 이들을 정의하는 방법들이 제시되었지만, 여기서는 버그가 어떻게 'fix'되었는지가 아니라 bug가 어떻게 'introduced'되었는지를, bug-inducing commit의 정보를 통해 학습하는 것이 효과적이라는 것을 보인다. preliminary approach는 bug-inducing commit으로부터 도출된 fixing ingrediant와 mutation operator들을 사용하여 APR을 수행한 결과 기존 테크닉들이 고치지 못한 11개의 버그에 대한 패치를 새롭게 찾아냈다고 한다. NIER 트랙으로 paper가 공개되어 있지 않아서 테크니컬한 detail은 알 수 없어 아쉬웠다. 실제로 bug-inducing commit으로부터 ingrediant와 mutation operator를 어떻게 만들어낼 수 있는지에 대한 과정을 명확하게 알고 싶다.
 
@@ -104,36 +103,33 @@ search-based patch generation에서는 ingredient space와 mutation operator를 
 
 마찬가지로 NIER 트랙에 소개된 논문인데, API misuse로 인한 bug를 특정한 대상으로 삼은 것에 관심이 갔다. API usage에 대한 specification을 infer하고 misuse를 detect하고자 하는 기존의 테크닉들은 여전히 큰 false-positive rate 때문에 상용화하기에는 무리가 있는 단계다. 이 논문에서는 개발자들이 manual하게 detect하고 fix한 해당 API misuse에 대해서 **correction rule**을 infer 하고, 다른 프로젝트에서도 동일하게 해당 API를 쓰는 경우에 대해 적용할 수 있도록 한다. knowledge transfer의 관점에서, 여러 프로젝트에서 공통으로 사용되는 API misuse에 대한 버그를 접근한다는 점에서 의미있는 방향인 것 같았는데, correction rule이 얼마나 general한지 (어떤 형태일까? 단순한 patch일까? 아니면 patch의 template일까?), 어떻게 이 rule을 infer할 수 있는지 (learning-based patch generation 처럼 seq2seq model이나 predefined rule에 대한 classification일까?)가 더 궁금했다.
 
-
 ### [5] Seenomaly: Vision-Based Linting of GUI Animation Effects Against Design-Don't Guidelines
 
-Linting의 범위를 GUI Animation으로 확장했다는 점에서, 꽤 명확하고 재미있는 접근이라고 생각했다. card movement, menu slide in/out, snackbar display 등등 이렇게 말하면 안 와닿을 수도 있지만, 프레젠테이션에서 모아놓고 보니 평소에 `아 올드하다.. 정신없다..` 라고 생각했던 각종 안티패턴들을 쉽게 떠올릴 수 있었다. 놀랍게도 `제발 이렇게 만들지는 마!!` 라고 되어 있는 Don't guideline이 따로 있다고 한다. ([Android Material Design Guideline](https://material.io/design/introduction/)) 이것만으로는 데이터가 부족하기 때문에 VAE(Variational AutoEncoder)와 GAN을 함께 사용하여 다양한 don't example들을 synthesize했다. 여기서는 linting을 위한 실제 classification task에 집중하기보다는 unlabelled GUI animation을 grouping하여 dataset을 만들어내는 것에 집중했다.  
+Linting의 범위를 GUI Animation으로 확장했다는 점에서, 꽤 명확하고 재미있는 접근이라고 생각했다. card movement, menu slide in/out, snackbar display 등등 이렇게 말하면 안 와닿을 수도 있지만, 프레젠테이션에서 모아놓고 보니 평소에 `아 올드하다.. 정신없다..` 라고 생각했던 각종 안티패턴들을 쉽게 떠올릴 수 있었다. 놀랍게도 `제발 이렇게 만들지는 마!!` 라고 되어 있는 Don't guideline이 따로 있다고 한다. ([Android Material Design Guideline](https://material.io/design/introduction/)) 이것만으로는 데이터가 부족하기 때문에 VAE(Variational AutoEncoder)와 GAN을 함께 사용하여 다양한 don't example들을 synthesize했다. 여기서는 linting을 위한 실제 classification task에 집중하기보다는 unlabelled GUI animation을 grouping하여 dataset을 만들어내는 것에 집중했다.
 
-* GUI Animation features: vision-based feature extractor를 사용하여 unlabelled GUI animation들에 대한 temporal-spatial feature를 훈련시킨다. 이 과정은 unsupervised로 이뤄진다. 그리고 이렇게 학습된 feature들을 바탕으로 명확한 don't guideline의 경우, 그리고 이들의 linted 버전을 feature space에 위치시킨 후 KNN classification을 수행하게 된다. 즉, 타겟 애니메이션의 k-nearest neighbors중 몇 개가 don't guideline에 속하는지 아닌지를 판단하여 classification을 수행하게 된다. 
+-   GUI Animation features: vision-based feature extractor를 사용하여 unlabelled GUI animation들에 대한 temporal-spatial feature를 훈련시킨다. 이 과정은 unsupervised로 이뤄진다. 그리고 이렇게 학습된 feature들을 바탕으로 명확한 don't guideline의 경우, 그리고 이들의 linted 버전을 feature space에 위치시킨 후 KNN classification을 수행하게 된다. 즉, 타겟 애니메이션의 k-nearest neighbors중 몇 개가 don't guideline에 속하는지 아닌지를 판단하여 classification을 수행하게 된다.
 
-* Comment: 최근에 Code Reusability에 대한 문제를 건드려 보고 싶어서, application의 실제 internal logic과 연관되는 GUI component를 추출하는 것에 대해 program slicing 측면으로 생각을 했었다. 여기서는 linting의 측면에서 GUI animation의 특성을 classify하는 문제이기 때문에 내가 생각하던 target problem과는 조금 다르지만, GUI component의 visual semantic을 feature extractor로 뽑아내고 clustering을 수행하는 아이디어에서 어느 정도 영감을 받을 수 있을 것 같다. 
+-   Comment: 최근에 Code Reusability에 대한 문제를 건드려 보고 싶어서, application의 실제 internal logic과 연관되는 GUI component를 추출하는 것에 대해 program slicing 측면으로 생각을 했었다. 여기서는 linting의 측면에서 GUI animation의 특성을 classify하는 문제이기 때문에 내가 생각하던 target problem과는 조금 다르지만, GUI component의 visual semantic을 feature extractor로 뽑아내고 clustering을 수행하는 아이디어에서 어느 정도 영감을 받을 수 있을 것 같다.
 
 ### [6] Testing File System Implementations on Layered Models
-갑작스레 GUI에서 low level로 내려와 system call sequence에 대해서 논의하게 되었다. (나의 관심사란 대체 무엇인가..) 파일 시스템을 테스트하기 위해 다양한 system call sequence를 input으로 robustness를 평가할 수 있을 것이다. (이런 점에서는 GUI를 테스트 하기 위해 event sequence를 generate하는 것과 동일하다) 
 
-이 연구는 파일 시스템과 같이 여러 layer로 분리된 복잡한 전체 시스템을 테스트하고자 한다. `layered model checking`이라고 이름붙인 이 개념은 먼저 전체 abstract한 모 델에 대한 abstract workload를 먼저 생성하고 layer by layer로 이를 concrete한 system call sequence로 확정하는 단계를 거친다. 
+갑작스레 GUI에서 low level로 내려와 system call sequence에 대해서 논의하게 되었다. (나의 관심사란 대체 무엇인가..) 파일 시스템을 테스트하기 위해 다양한 system call sequence를 input으로 robustness를 평가할 수 있을 것이다. (이런 점에서는 GUI를 테스트 하기 위해 event sequence를 generate하는 것과 동일하다)
 
-
+이 연구는 파일 시스템과 같이 여러 layer로 분리된 복잡한 전체 시스템을 테스트하고자 한다. `layered model checking`이라고 이름붙인 이 개념은 먼저 전체 abstract한 모델에 대한 abstract workload를 먼저 생성하고 layer by layer로 이를 concrete한 system call sequence로 확정하는 단계를 거친다.
 
 ## Defect Prediction
 
 ### [1] The Impact of Mislabeled Changes by SZZ on JIT Defect Prediction
 
-* JIT defect prediction: 어떤 change가 일어났을 때 바로, 이 change가 defect를 내포할 수 있는지 바로 판단할 수 있다면 얼마나 좋을까?
+-   JIT defect prediction: 어떤 change가 일어났을 때 바로, 이 change가 defect를 내포할 수 있는지 바로 판단할 수 있다면 얼마나 좋을까?
 
 그러기 위해 먼저 어떤 bug의 원인이 되는 change가 어떤 commit에서부터 비롯되는지 알아야 할 필요가 있다. (bug-inducing commit) 기존에 제안된 SZZ algorithm(bug-fixing commit의 changed line에서부터 candidate commits들을 observe하는 방식)에 많은 noise가 있음이 밝혀졌고 SZZ algorithm으로 만들어진 데이터를 JIT defect prediction model을 train할 때 사용하는 것은 결국 모델 자체의 부정확성에 큰 영향을 미칠 것이다.
 
 이 연구에서는 이렇게 mislabeled bug-inducing change들이 실제 JIT defect prediction model의 성능에 얼마나 큰 영향을 미치는지를 확인한다.
 
-4가지의 SZZ variant (B-SZZ, AG-SZZ, MA-SZZ, and RA-SZZ)에 대해서 evaluation을 수행하는데, 그 결과 RA-SZZ가 가장 mislabeled change를 적게 만들었다고 한다. 
+4가지의 SZZ variant (B-SZZ, AG-SZZ, MA-SZZ, and RA-SZZ)에 대해서 evaluation을 수행하는데, 그 결과 RA-SZZ가 가장 mislabeled change를 적게 만들었다고 한다.
 
 실제로 Defect Prediction Model에 들어가는 feature 중 중요하게 작용하는 것이 한 change에서 변경된 파일의 갯수와 같은 statistical한 metric인데, 이런 것들은 SZZ algorithm의 mislabeling으로부터 만들어진 noise에 크게 영향을 받지 않았다고 한다. 하지만 그 다음으로 중요한 metric에 대해서는 noise의 영향을 어느 정도 받았다고 한다.
-
 
 ### [2] Understanding the Automated Parameter Optimization on Transfer Learning for Cross-Project Defect Prediction: An Empirical Study
 
@@ -141,13 +137,16 @@ Linting의 범위를 GUI Animation으로 확장했다는 점에서, 꽤 명확�
 
 ### [1] Improving the Pull Request Review Process Using Learning-to-rank Algorithms
 
-개인적으로 Review process가 협업을 중심으로 한 소프트웨어 개발 사이클에서 굉장히 중요한 역할을 차지한다고 생각한다. 하지만 막상 내가 리뷰어가 되어서 누군가의 코드 리뷰를 하기란 굉장히 귀찮은 일(...)이 되고 만다. 
+개인적으로 Review process가 협업을 중심으로 한 소프트웨어 개발 사이클에서 굉장히 중요한 역할을 차지한다고 생각한다. 하지만 막상 내가 리뷰어가 되어서 누군가의 코드 리뷰를 하기란 굉장히 귀찮은 일(...)이 되고 만다.
 
 결국 리뷰의 결과는 이 Pull Request를 Merge할지, 말지가 되는 것인데 단순히 이를 binary classification 문제로 본다면, 잘못된 prediction으로 인한 cost도 굉장히 클 것이고, 여기서 소개하는 연구는 현재 열려있는 전체 pull request들에 ranking을 매기고자 한다. (가장 빨리 리뷰할 수 있는 것부터 추천) 이렇게 Learning-to-Rank 모델을 이용해서 기존의 classification 기반 decision prediction을 보완할 수 있을 것이다.
 
 LtR 모델에 들어가는 metric들은 총 18가지인데, Source Code Metrics, Textual Information Metrics, Contributor's Experience Metrics 등이 있다.
 
-* 기존의 LtR 알고리즘들: ListNet, RankNet, MART, random forest
-### [2] A Tale from the Trenches: Cognitive Biases and Software Development
+-   기존의 LtR 알고리즘들: ListNet, RankNet, MART, random forest
 
 ## Keynote: Formal Reasoning and the Hacker Way - Peter O'Hearn
+
+Program을 Reasoning한다는 것은 무슨 뜻일까? 이번 학기에 논리학 개론을 듣기는 했지만 이런 formal한 정의와 표현들을 어떻게 Static analysis에 활용하는지는 연결하지 못한 탓에, 테크니컬한 디테일에 대해서는 조금 어렵게 느껴졌지만, 전체적으로 Facebook에서 사용되는 static analyzer를 deploy하고자 하는 과정에서 얻은 insight는 practice에서 formal reasoning과 hacker way가 어떻게 결합하여 시너지를 낼 수 있는지 이해하는 데에 굉장히 유용하다고 생각했다.
+
+Theory Hacking에 대해서는, 너무 엄밀함을 추구하기 보단 최종 static analyzer의 cost를 생각해서 disjunction들을 drop하고, 탐색하는 path를 undersampling할 수 있었다는 Hacky한 자신의 접근을 얘기하며 "No, I'm not a bad person!!" 하고 항변하시는 모습이 재미있었다 ㅎㅎ
