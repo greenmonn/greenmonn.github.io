@@ -9,7 +9,7 @@ tags: [design-pattern]
 
 OOP는 익숙한 개념이지만 AOP(Aspect-oriented Programming)이라는 단어는 생소하다. OOP와 마찬가지로 modularity를 지향한다는 목적은 공유하지만, Aspect-Oriented Programming의 핵심은 관심사(concern)을 고려한다는 것이다. OOP의 핵심 키워드가 책임(responsibility)인 것을 생각하면 미묘한 차이가 있다.
 
-예를 들면, Security, Logging 등이 관심사가 될 수 있
+예를 들면, Security, Logging 등이 관심사가 될 수 있다.
 
 관심사를 분리(=SoC, Seperation of Concerns)함으로써 소프트웨어의 Modularity를 증가시킨다. 물론 OOP에서 메소드, 클래스, 또는 패키지 단위로 관심사를 분리할 수도 있지만, **패키지나 클래스 단위로 분리할 수 없는 관심사가 존재한다.** 이러한 cross-cutting concern의 대표적인 예시로 Security가 있다. 복수의 패키지에서 소프트웨어의 보안을 위해 비슷한 기능을 요구할 때, AOP는 security에 관한 concern을 별도의 패키지로 옮기고 다른 객체들이 security에 대한 implementation 없이 명확한 자신의 책임, 비즈니스 로직에만 집중할 수 있도록 한다. 마찬가지로 Logging도 하나의 aspect로 생각할 수 있다.
 
