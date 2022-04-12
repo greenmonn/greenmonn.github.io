@@ -3,7 +3,7 @@ title: "CUDA와 Numba를 활용해서 빠르게 Distance Matrix 계산하기"
 tags: [cuda, python]
 ---
 
-Python에서 distance matrix를 가장 빠르게 계산하는 방법 (?)
+CUDA + Numba = 궁극의 계산 속도 
 
 <!--more-->
 
