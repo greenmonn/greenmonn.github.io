@@ -44,8 +44,8 @@ title: Home
             {% for post in site.posts  limit:6 %}
             {% unless post.tags contains 'draft' %}
             <li>
-                <a class="post-list-title" href="{{ post.url }}">{{ post.title }}</a> | 
-                <span class="explain is-hidden-touch">{{ post.excerpt | strip_html | truncatewords:75 }}</span>
+                <a class="post-list-title" href="{{ post.url }}">{{ post.title }}</a>
+                <span class="explain is-hidden-touch"> | {{ post.excerpt | strip_html | truncatewords:75 }}</span>
                 <br>
                 {% for tag in post.tags %}
                 <a href="/tags#{{ tag }}"><span class="tag is-light">#{{ tag }}</span></a>
