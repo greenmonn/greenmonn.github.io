@@ -6,7 +6,7 @@ tags: [essay]
 필립 K.딕의 소설 \<안드로이드는 전기양의 꿈을 꾸는가?\>에 나오는...
 
 <!--more-->
-<img src="/assets/images/deckard.jpeg" alt="" width="100" height="100">
+<img src="/assets/images/deckard.jpeg" alt="" width="70%">
 
 
 ## 더 정확한 정적 분석기를 위해
