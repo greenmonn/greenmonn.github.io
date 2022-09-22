@@ -1,14 +1,12 @@
 ---
-title: "ICSE 2022 Paper Review"
+title: "ICSE 2022 Papers"
 tags: [paper-review, conference]
 ---
 
-...
+ICSE 2022: 관심있는 페이퍼 리스트
 
 <!--more-->
 
-
-## Interested Paper List
 
 ### Test Oracle Generation
 * [Automated Assertion Generation via Information Retrieval and Its Integration with Deep Learning](https://conf.researchr.org/details/icse-2022/icse-2022-papers/112/Automated-Assertion-Generation-via-Information-Retrieval-and-Its-Integration-with-Dee)
