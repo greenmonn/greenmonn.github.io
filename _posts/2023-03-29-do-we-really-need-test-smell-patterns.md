@@ -15,7 +15,7 @@ Martin Fowler가 Code Smell이라는 개념을 도입한 이래, 특별히 테�
 * Mystery Guest: 파일 또는 데이터베이스와 같은 외부 리소스에 접근하는 테스트 케이스는, self-contained가 아니기 때문에 바람직하지 않다.
 * Resource Optimism: 테스트 케이스가 테스트를 위해 필요한 리소스나 다른 클래스에 의해 변경된 상태를 가정하는 경우다. 이를 막기 위해 Mock을 사용한다.
 * Test Run War: 테스트가 shared resource에 의존하는 경우, 테스트가 병렬적으로 실행될 때 문제가 발생할 수 있다.
-* Genera Fixture: JUnit과 같은 테스팅 프레임워크에서 `setUp`과 같은 메소드를 사용해서 테스트를 위한 fixture를 생성할 수 있다. 하지만 이 setUp fixture가 너무 많은 테스트에 적용되도록 일반적으로 설계되어 있을 경우, 매번 필요하지 않은 setUp 실행 때문에 테스트 실행이 느려질 뿐만 아니라, setUp 코드의 가독성 또한 떨어진다.
+* General Fixture: JUnit과 같은 테스팅 프레임워크에서 `setUp`과 같은 메소드를 사용해서 테스트를 위한 fixture를 생성할 수 있다. 하지만 이 setUp fixture가 너무 많은 테스트에 적용되도록 일반적으로 설계되어 있을 경우, 매번 필요하지 않은 setUp 실행 때문에 테스트 실행이 느려질 뿐만 아니라, setUp 코드의 가독성 또한 떨어진다.
 * Eager Test: 하나의 테스트 케이스가 코드의 여러 기능을 테스트하는 경우, 테스트를 읽고 이해하기 어려워진다.
 * Lazy Test: 여러 테스트 메소드가 동일한 fixture로 같은 메소드를 테스트하는 경우에는 이들을 합치는 것이 더 나을 수 있다.
 * Assertion Roulette: 하나의 테스트가 여러 개의 assertion 구문을 포함하며, 각 assertion이 왜 fail하는지에 대한 설명이 없는 경우이다. assertion이 실패하더라도 정확히 무엇이 잘못되었는지 개발자가 이해하기 어렵다.
