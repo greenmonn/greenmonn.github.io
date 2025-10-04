@@ -7,4 +7,6 @@ highlighter: rouge
 
 excerpt_separator: "<!--more-->"
 
+repository: greenmonn/greenmonn.github.io
+
 url: "https://greenmon.dev"
