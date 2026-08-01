@@ -1,0 +1,50 @@
+{% assign filter_tags = site.tags | sort %}
+{% assign public_post_count = 0 %}
+{% for post in site.posts %}
+  {% unless post.tags contains 'draft' or post.tags contains 'secret' %}
+    {% assign public_post_count = public_post_count | plus: 1 %}
+  {% endunless %}
+{% endfor %}
+
+<div class="post-tag-filter" data-post-filter>
+  <p class="filter-title"><span aria-hidden="true">&gt;</span> filter_by_tag</p>
+  <div class="filter-buttons" role="group" aria-label="Filter posts by tag">
+    <button type="button" class="is-active" data-filter-all-tags aria-pressed="true">
+      All <small>{{ public_post_count }}</small>
+    </button>
+    {% for tag in filter_tags %}
+      {% assign tag_label = tag | first %}
+      {% assign tag_size = 0 %}
+      {% assign tagged_posts = tag | last %}
+      {% for tagged_post in tagged_posts %}
+        {% unless tagged_post.tags contains 'draft' or tagged_post.tags contains 'secret' %}
+          {% assign tag_size = tag_size | plus: 1 %}
+        {% endunless %}
+      {% endfor %}
+      {% if tag_size > 0 %}
+        <button type="button" data-filter-tag="{{ tag_label | slugify }}" aria-pressed="false">
+          #{{ tag_label }} <small>{{ tag_size }}</small>
+        </button>
+      {% endif %}
+    {% endfor %}
+  </div>
+
+  {% assign posts_by_year = site.posts | group_by_exp: "post", "post.date | date: '%Y'" %}
+  <p class="filter-title year-filter-title"><span aria-hidden="true">&gt;</span> filter_by_year</p>
+  <div class="filter-buttons" role="group" aria-label="Filter posts by year">
+    <button type="button" class="is-active" data-filter-all-years aria-pressed="true">All</button>
+    {% for year in posts_by_year %}
+      {% assign year_size = 0 %}
+      {% for post in year.items %}
+        {% unless post.tags contains 'draft' or post.tags contains 'secret' %}
+          {% assign year_size = year_size | plus: 1 %}
+        {% endunless %}
+      {% endfor %}
+      {% if year_size > 0 %}
+        <button type="button" data-filter-year="{{ year.name }}" aria-pressed="false">
+          {{ year.name }} <small>{{ year_size }}</small>
+        </button>
+      {% endif %}
+    {% endfor %}
+  </div>
+</div>

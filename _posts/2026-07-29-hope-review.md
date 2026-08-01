@@ -1,6 +1,7 @@
 ---
 title: "영화 「호프」 리뷰"
-tags: [movie, review]
+tags: [review, essay]
+bookstyle: true
 ---
 
 「호프」는 명작인가 졸작인가 (스포일러 주의)

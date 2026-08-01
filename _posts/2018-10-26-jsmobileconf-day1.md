@@ -1,9 +1,8 @@
 ---
 title: JSMobileConf 2018 Day 1 노트 
-tags: [TIL, conference,javascript]
+tags: [event]
 ---
-
-보스턴에서 열린 JSMobileConf 2018에서 열심히 옮겨적은 흥미로운 주제들. 첫째날.
+JSMobileConf 2018 in Boston, USA
 
 <!--more--> 
 
@@ -135,7 +134,6 @@ By [Crescendo](https://getcrescendo.co/) CTO
 	1. Channel Optimization
 	2. Acquisition loops
 	3. Retention loops
-
 
 
 

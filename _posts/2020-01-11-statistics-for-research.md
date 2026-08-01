@@ -1,6 +1,6 @@
 ---
 title: "연구를 위한 통계학"
-tags: [statistics]
+tags: [math]
 ---
 
 [번역] Statistics Tutorial

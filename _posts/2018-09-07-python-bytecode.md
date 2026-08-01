@@ -1,6 +1,6 @@
 ---
 title: Python Bytecode
-tags: [python, TIL]
+tags: [TIL, programming-language]
 ---
 
 pyc 파일의 정체에 대해 궁금해하다가

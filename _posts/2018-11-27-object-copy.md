@@ -1,6 +1,6 @@
 ---
 title: Golang에서 object copy 개념 짚고 넘어가기
-tags: [TIL, golang]
+tags: [TIL, programming-language]
 ---
 
 deep copy와 shallow copy가 헷갈릴 때

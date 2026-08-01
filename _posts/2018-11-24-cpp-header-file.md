@@ -1,6 +1,6 @@
 ---
 title: Header file in C/C++
-tags: [c++, TIL]
+tags: [TIL, programming-language]
 ---
 
 알고 있다고 생각했지만 사실은 몰랐던 헤더 파일의 진실

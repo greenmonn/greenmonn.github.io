@@ -1,6 +1,6 @@
 ---
 title: 'PyTorch로 구현하는 CNN'
-tags: [deep-learning]
+tags: [AI]
 ---
 
 PyTorch로 구현하는 CNN: Channel, Filter, Batch Normalization을 중심으로

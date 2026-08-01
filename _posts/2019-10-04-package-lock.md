@@ -1,6 +1,6 @@
 ---
 title: "package-lock.json은 왜 있는 걸까?"
-tags: [javascript]
+tags: [engineering-tips]
 ---
 
 package.json을 gitignore에 포함시켜야 할지 고민하다가

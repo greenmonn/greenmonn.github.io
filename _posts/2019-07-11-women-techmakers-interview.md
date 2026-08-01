@@ -1,6 +1,6 @@
 ---
 title: "Women Techmakers Scholarship Interview 회고"
-tags: [interview]
+tags: [essay]
 ---
 
 Women Techmakers Scholarship Program 2019

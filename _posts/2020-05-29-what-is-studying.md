@@ -1,6 +1,7 @@
 ---
 title: "공부란 무엇인가? - 김영민 교수님 리더십 강연 후기"
-tags: [essay]
+tags: [essay, event]
+bookstyle: true
 ---
 
 공부와 성장

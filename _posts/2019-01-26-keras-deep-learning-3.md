@@ -1,6 +1,6 @@
 ---
 title: "Keras를 활용한 Deep Learning: Review (Part 3)"
-tags: [keras, deeplearning, TIL]
+tags: [AI]
 ---
 
 Recurrent Neural Network (RNN)
@@ -59,7 +59,6 @@ model.add(GRU(256))
 
 ### 참고 링크 추가
 - 헷갈리는 Batch/Epoch 개념: [Epoch vs Batch Size vs Iterations – Towards Data Science](https://towardsdatascience.com/epoch-vs-iterations-vs-batch-size-4dfb9c7ce9c9)
-
 
 
 

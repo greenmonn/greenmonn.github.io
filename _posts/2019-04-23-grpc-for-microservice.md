@@ -1,6 +1,6 @@
 ---
 title: "gRPC for Microservices"
-tags: [grpc, microservice]
+tags: [dev-concepts]
 ---
 
 오픈소스 범용 RPC Framework from Google: gRPC

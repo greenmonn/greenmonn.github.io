@@ -1,6 +1,6 @@
 ---
 title: 'Network Pruning 기법 분류'
-tags: [deep-learning, CNN]
+tags: [AI]
 ---
 
 다양한 Network Pruning 기법들을 정리해보았다.

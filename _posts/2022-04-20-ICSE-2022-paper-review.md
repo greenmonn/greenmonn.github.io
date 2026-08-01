@@ -1,9 +1,9 @@
 ---
 title: "ICSE 2022 Papers"
-tags: [paper-review, conference]
+tags: [software-engineering, review]
 ---
 
-ICSE 2022: 관심있는 페이퍼 리스트
+ICSE 2022: 관심있는 페이퍼 목록 정리
 
 <!--more-->
 

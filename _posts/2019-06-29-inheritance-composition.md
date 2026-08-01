@@ -1,6 +1,6 @@
 ---
 title: "OOP에서 상속과 결합, 무엇을 써야 할까? (Composition over Inheritance)"
-tags: [oop]
+tags: [dev-concepts]
 ---
 
 상속과 결합, 언제, 어떻게, 골라서 써야 할까?

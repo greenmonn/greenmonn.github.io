@@ -1,6 +1,6 @@
 ---
 title: Jekyll + Github Pages로 블로그 만들기
-tags: [jekyll, web, ruby, TIL]
+tags: [engineering-tips]
 ---
 
 블로그 제작기
@@ -83,7 +83,6 @@ group :jekyll_plugins do
 아직 permalink 설정, pagination 만들기, category 생성 등 추가해야 할 것들이 많이 남았다. 이런 기능을 차근차근 더해가면서 포스팅도 슬금슬금 늘려 나가야겠다. 
 
 아, 그리고 최근에 알게 된 건데, Ruby 말고 Node.js 기반의 [Hexo](https://hexo.io/ko/index.html)라는 것도 있다. 사실 이걸 먼저 알았더라면 Jekyll 말고 Hexo로 만드는 건데(…) 게다가 이렇게 취향저격 귀여운 테마([Cactus Dark](https://probberechts.github.io/hexo-theme-cactus/cactus-dark/public/))도 있으니 아직 안 만든 분들은 Jekyll과 Hexo 중 뭘 써볼지 행복한 고민을 해보길 바란다. 
-
 
 
 

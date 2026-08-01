@@ -1,6 +1,6 @@
 ---
 title: "Test Smell Patterns: 내 테스트 코드, 이대로 괜찮을까?"
-tags: [software engineering]
+tags: [software-engineering, dev-concepts]
 ---
 
 유지보수 측면에서 테스트 품질의 척도

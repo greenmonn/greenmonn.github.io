@@ -1,6 +1,6 @@
 ---
 title: "VueJS: computed와 watch 속성"
-tags: [web, javascript, vuejs, TIL]
+tags: [dev-concepts]
 ---
   
 선언형 프로그래밍과 명령형 프로그래밍

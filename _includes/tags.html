@@ -1,11 +1,15 @@
 <ul class="tag-cloud">
     {% for tag in site.tags %}
 
-    {% capture tag_name %}{{tag|first|slugize}}{% endcapture %}
-
-    {% capture font_size %}{{tag|last|size| times:100 | divided_by:site.tags.size | plus: 50 }}%{% endcapture %}
-
-    {% assign tag_size = tag | last | size %}
+    {% assign tag_label = tag | first %}
+    {% assign tag_name = tag_label | slugify %}
+    {% assign tag_posts = tag | last %}
+    {% assign tag_size = 0 %}
+    {% for tagged_post in tag_posts %}
+        {% unless tagged_post.tags contains 'draft' or tagged_post.tags contains 'secret' %}
+            {% assign tag_size = tag_size | plus: 1 %}
+        {% endunless %}
+    {% endfor %}
 
     {% if tag_size > 3 %}
     {% assign tag_class = "is-primary" %}
@@ -13,8 +17,10 @@
     {% assign tag_class = "is-light" %}
     {% endif %}
 
-    <li>
-        <a href="/tags#{{ tag_name }}"><span class="tag {{ tag_class }}">#{{ tag_name }} ({{ tag_size }})</span></a>
-    </li>
+    {% if tag_size > 0 and tag_label != 'draft' and tag_label != 'secret' %}
+        <li>
+            <a href="/tags#{{ tag_name }}"><span class="tag {{ tag_class }}">#{{ tag_label }} ({{ tag_size }})</span></a>
+        </li>
+    {% endif %}
     {% endfor %}
 </ul>

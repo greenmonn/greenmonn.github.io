@@ -1,6 +1,6 @@
 ---
 title: "왓챠 CPT Project 중단"
-tags: [blockchain, essay]
+tags: [essay]
 ---
 
 정말 블록체인 기술에는 미래가 없나

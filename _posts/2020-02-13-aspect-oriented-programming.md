@@ -1,6 +1,6 @@
 ---
 title: "Aspect-oriented Programming"
-tags: [design-pattern]
+tags: [dev-concepts]
 ---
 
 관점 지향 프로그래밍

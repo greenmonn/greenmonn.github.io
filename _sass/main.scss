@@ -1,5 +1,5 @@
 body {
-  font-family: Muli, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-family: Pretendard, "Apple SD Gothic Neo", sans-serif;
   font-weight: 400;
   font-style: normal;
   line-height: 1;
@@ -35,26 +35,34 @@ pre {
 }
 
 .navbar {
-  margin-top: 40px;
+  margin-top: 10px;
 
   .navbar-burger {
-    font-family: Inconsolata;
+    font-family: Pretendard, "Apple SD Gothic Neo", sans-serif;
   }
 
   .navbar-title {
     &:hover {
       color: green;
     }
-    font-size: 25px;
-    font-weight: 800;
-    letter-spacing: -0.02em;
+
+    &::after {
+      content: "_";
+      color: black;
+      animation: terminal-cursor 1s steps(1, end) infinite;
+    }
+
+    font-family: "VT323", "Courier New", monospace;
+    font-size: 32px;
+    font-weight: 400;
+    letter-spacing: 0.01em;
     line-height: 1;
     color: #2a2f36;
     padding: 0;
   }
 
   .navbar-menu {
-    font-family: Inconsolata;
+    font-family: Pretendard, "Apple SD Gothic Neo", sans-serif;
     font-weight: 700;
 
     .navbar-end {
@@ -64,6 +72,91 @@ pre {
         }
       }
     }
+  }
+
+}
+
+@keyframes terminal-cursor {
+  0%,
+  49% {
+    opacity: 1;
+  }
+
+  50%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .navbar .navbar-title::after {
+    animation: none;
+  }
+}
+
+.inline-icon {
+  height: 1em;
+  width: auto;
+  vertical-align: -0.15em;
+  display: inline-block;
+}
+
+.greenmon-image {
+  width: 2.5rem;
+}
+
+.site-utility-bar {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  padding-top: 14px;
+  padding-right: 12px;
+}
+
+.locale-switcher {
+  display: inline-flex;
+  gap: 2px;
+  padding: 2px;
+  border: 1px solid rgba(108, 122, 137, 0.18);
+  border-radius: 999px;
+  background: white;
+
+  button {
+    min-width: 28px;
+    padding: 4px 7px;
+    border: 0;
+    border-radius: 999px;
+    color: #8a96a3;
+    background: transparent;
+    font-family: Pretendard, "Apple SD Gothic Neo", sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    line-height: 1;
+    cursor: pointer;
+    transition: color 0.2s ease, background-color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: green;
+    }
+
+    &:focus-visible {
+      outline: 2px solid rgba(0, 128, 0, 0.35);
+      outline-offset: 1px;
+    }
+
+    &.is-active {
+      color: white;
+      background: green;
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .locale-switcher button {
+    min-width: 32px;
+    padding: 5px 8px;
+    font-size: 0.72rem;
   }
 }
 
@@ -97,17 +190,22 @@ pre {
 .intro {
   div {
     p {
-      line-height: 1.3;
-      font-family: Inconsolata, "Apple SD Gothic Neo", "Noto Sans KR",
+      font-size: 0.95rem;
+      line-height: 1.4;
+      font-family: Pretendard, "Apple SD Gothic Neo",
         sans-serif;
+
+      small {
+        font-size: inherit;
+      }
     }
   }
 }
 
 .posts {
   .post-dates {
-    border-right: 1px solid coral;
-    padding-right: 2rem;
+    border-right: 1px solid green;
+    padding-right: 1rem;
     text-align: right;
   }
   ul {
@@ -118,24 +216,37 @@ pre {
 
       .explain {
         font-size: smaller;
-        font-family: Inconsolata, "Apple SD Gothic Neo", "Noto Sans KR",
+        font-family: Pretendard, "Apple SD Gothic Neo",
           sans-serif;
         margin-left: 5px;
       }
 
       .date {
-        font-size: smaller;
+        font-family: "VT323", "Courier New", monospace;
+        font-size: 1.2rem;
         font-weight: 700;
         color: green;
-        font-family: Inconsolata, "Apple SD Gothic Neo", "Noto Sans KR",
-          sans-serif;
       }
     }
   }
 
   .post-list-title {
     color: black;
+    font-size: 1.2rem;
     font-weight: 600;
+    line-height: 1.25;
+  }
+
+  .see-more-posts {
+    font-size: 0.9rem;
+
+    a.noblue {
+      color: green;
+
+      &:hover {
+        color: orangered;
+      }
+    }
   }
 }
 .gallery {
@@ -215,7 +326,7 @@ a.noblue {
 }
 
 .nerdy-font {
-  font-family: Inconsolata, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+  font-family: Pretendard, "Apple SD Gothic Neo", sans-serif;
 }
 
 .current {
@@ -228,8 +339,80 @@ a.noblue {
 
 footer {
   margin-top: 50px;
+
   p {
-    font-size: 0.9rem;
-    font-family: Inconsolata, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
+    font-size: 0.75rem;
+    font-family: Pretendard, "Apple SD Gothic Neo", sans-serif;
+  }
+}
+
+.footer {
+  margin: 50px auto 0;
+  padding: 30px;
+  max-width: calc(100% - 60px);
+  border-top: 1px solid rgba(108, 122, 137, 0.22);
+  background-color: transparent;
+
+  .footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 18px;
+  }
+
+  .footer-link {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    color: #6c7a89;
+    transition: color 0.2s ease, background-color 0.2s ease;
+
+    &:hover,
+    &:focus-visible {
+      color: green;
+      background-color: rgba(108, 122, 137, 0.08);
+    }
+
+    &::after {
+      content: attr(data-tooltip);
+      position: absolute;
+      left: 50%;
+      bottom: calc(100% + 8px);
+      z-index: 1;
+      padding: 6px 8px;
+      border-radius: 4px;
+      color: white;
+      background: #2a2f36;
+      font-family: Pretendard, "Apple SD Gothic Neo", sans-serif;
+      font-size: 0.75rem;
+      line-height: 1;
+      white-space: nowrap;
+      opacity: 0;
+      pointer-events: none;
+      transform: translate(-50%, 4px);
+      transition: opacity 0.15s ease, transform 0.15s ease;
+    }
+
+    &:hover::after,
+    &:focus-visible::after {
+      opacity: 1;
+      transform: translate(-50%, 0);
+    }
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .footer {
+    max-width: 70%;
+  }
+}
+
+@media only screen and (min-width: 1024px) {
+  .footer {
+    max-width: 65%;
   }
 }

@@ -1,6 +1,6 @@
 ---
 title: "시행착오를 지향하는 삶"
-tags: [essay]
+tags: [essay, CS]
 ---
 
 Heuristic Algorithm for Life 2

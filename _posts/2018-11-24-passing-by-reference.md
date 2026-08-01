@@ -1,6 +1,6 @@
 ---
 title: C++에서 Passing by Reference란?
-tags: [TIL, c++]
+tags: [TIL, programming-language]
 ---
 
 C++의 특별한 Reference 개념

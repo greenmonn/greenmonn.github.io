@@ -1,6 +1,6 @@
 ---
 title: "Bitcoin 지갑 주소에 Hash를 사용하는 이유"
-tags: [blockchain, bitcoin]
+tags: [CS]
 ---
 
 Bitcoin 지갑 주소 생성 과정: 암호화 알고리즘과 Hash Function을 중심으로
@@ -50,4 +50,3 @@ Address를 만들기 위해 Public key를 가공하는 이유는 무엇일까? �
 ![](https://bitcoin.org/img/dev/en-unlocking-p2sh-output.svg)
 
 이 과정을 완전히 이해하려면 Bitcoin의 UTXO와 Lock Script/Unlock Script가 어떻게 실행되는지 되짚어 볼 필요가 있다. 추후 여기에 대해서도 포스팅 할 기회가 있을 것이다.
-

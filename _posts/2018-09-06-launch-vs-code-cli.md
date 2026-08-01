@@ -1,6 +1,6 @@
 ---
 title: Launch VS Code from Command Line
-tags: [vscode, TIL]
+tags: [TIL, engineering-tips]
 ---
 
 언제든지 터미널에서 code를 열어보자

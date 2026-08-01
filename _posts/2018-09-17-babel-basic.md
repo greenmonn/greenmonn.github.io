@@ -1,6 +1,6 @@
 ---
 title: babel cheat sheet
-tags: [TIL, web, javascript]
+tags: [TIL, engineering-tips]
 ---
 
 babel 쓸때 더이상 삽질은 그만

@@ -1,6 +1,6 @@
 ---
 title: "VueJS render 메소드"
-tags: [TIL, vuejs, javascript]
+tags: [dev-concepts]
 ---
 
 VueJS CLI 뜯어보기

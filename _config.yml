@@ -1,3 +1,6 @@
+title: Greenmon Blog
+description: Notes on what I learn, think about, and imagine.
+
 plugins:
   - jekyll-sitemap
   - jekyll-feed

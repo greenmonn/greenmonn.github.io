@@ -1,6 +1,6 @@
 ---
 title: "휴리스틱 알고리즘과 삶 속의 선택에 대한 단상"
-tags: [essay]
+tags: [essay, CS]
 ---
 
 Analogy between Metaheuristic Search Techniques and Life

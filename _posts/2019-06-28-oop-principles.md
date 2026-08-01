@@ -1,6 +1,6 @@
 ---
 title: "Object-Oriented Design Principles"
-tags: [oop, design-principles]
+tags: [dev-concepts]
 ---
 
 SOLID 객체지향 설계 원칙, 디미터 원칙, 객체지향 3요소
@@ -71,5 +71,4 @@ SOLID 객체지향 설계 원칙, 디미터 원칙, 객체지향 3요소
 1. Encapsulation
 2. Inheritance or Delegation
 3. Polymorphism
-
 

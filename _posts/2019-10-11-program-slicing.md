@@ -1,6 +1,6 @@
 ---
 title: "Program Slicing"
-tags: []
+tags: [software-engineering]
 ---
 
 Learning about program slicing

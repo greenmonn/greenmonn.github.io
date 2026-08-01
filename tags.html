@@ -9,26 +9,32 @@ title: Tags
 </section>
 
 <section id="archive_group">
-    {% for tag in site.tags %} {% assign tag_name = tag | first | slugsize %}
+    {% for tag in site.tags %}
+    {% assign tag_label = tag | first %}
+    {% assign tag_name = tag_label | slugify %}
+    {% unless tag_label == 'draft' or tag_label == 'secret' %}
 
     <div id="{{ tag_name }}" class="posts-list" style="display: none">
         <ul class="posts-list">
-            {% for post in site.tags[tag_name] %}
+            {% for post in site.tags[tag_label] %}
 
+            {% unless post.tags contains 'draft' or post.tags contains 'secret' %}
             <li>
                 {% include post_item.html %}
             </li>
+            {% endunless %}
 
             {% endfor %}
         </ul>
     </div>
+    {% endunless %}
     {% endfor %}
 </section>
 
 <script>
-    document.addEventListener('DOMContentLoaded', () => {
-        let $selected = undefined;
+    let $selected;
 
+    const showSelectedTag = () => {
         const tagname = getTagName(window.location.href);
 
         if ($selected) {
@@ -36,12 +42,12 @@ title: Tags
         }
 
         $selected = document.getElementById(tagname);
+        if (!$selected) return;
         $selected.style.display = "block";
+    };
 
-        setTimeout(() => {
-            scrollToTop();
-        }, 50)
-    });
+    document.addEventListener('DOMContentLoaded', showSelectedTag);
+    window.addEventListener('hashchange', showSelectedTag);
 
     const getTagName = (url) => {
         const parsed = /#([^\s]+)$/.exec(url);
@@ -53,14 +59,4 @@ title: Tags
         return parsed.pop();
     };
 
-    const scrollToTop = () => {
-        const currentScroll = window.scrollY;
-
-        console.log(currentScroll);
-
-        if (currentScroll > 0) {
-            window.requestAnimationFrame(scrollToTop);
-            window.scrollTo(0, currentScroll - (currentScroll/5));
-        }
-    };
 </script>

@@ -1,6 +1,6 @@
 ---
 title: '[번역] Seq2Seq with Attention and Beam Search'
-tags: [deep-learning, nlp]
+tags: [AI, draft]
 ---
 
 Attention과 Beam Search를 활용한 Seqence-to-Sequence 모델

@@ -1,6 +1,6 @@
 ---
 title: Python에서 정규식 쓰기
-tags: [python, regexp, TIL]
+tags: [TIL, engineering-tips, programming-language]
 ---
 
 Python으로 정규식 차근차근 써보기

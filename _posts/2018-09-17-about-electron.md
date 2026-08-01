@@ -1,6 +1,6 @@
 ---
 title: electron 처음 시작하기
-tags: [TIL, web, javascript]
+tags: [dev-concepts]
 ---
 
 항상 궁금했던 electron 맛보기

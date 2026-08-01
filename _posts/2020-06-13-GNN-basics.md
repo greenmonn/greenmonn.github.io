@@ -1,6 +1,6 @@
 ---
 title: "GNN 사용을 위한 넓고 얕은 지식"
-tags: [GNN, machine-learning]
+tags: [AI]
 ---
 
 G사넓얕

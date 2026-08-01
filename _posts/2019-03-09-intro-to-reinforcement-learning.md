@@ -1,6 +1,6 @@
 ---
 title: "Introduction to Reinforcement Learning"
-tags: [deeplearning, reinforcementlearning]
+tags: [AI]
 ---
 
 강화학습 처음 시작하기

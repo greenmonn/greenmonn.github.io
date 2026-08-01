@@ -1,6 +1,6 @@
 ---
 title: "블록체인 회고"
-tags: [blockchain, retrospective]
+tags: [essay, CS]
 ---
 
 블록체인과 함께한 1년 (앞으로도?)
@@ -37,5 +37,4 @@ tags: [blockchain, retrospective]
 당장의 목표는 저 ‘블록체인은 무엇인가’ 라는 질문에 자신있게 대답할 수 있는 능숙함을 기르는 것이다. [Blockchain A-Z™](https://www.udemy.com/build-your-blockchain-az/)라는 Udemy 강의를 시작했고, 기본적인 개념들을 되짚어가며 다른 사람들에게 설명할 수 있는 지식을 다지는 것이 먼저 필요할 것 같다.
 
 회사에서 맡은 업무는 Dapp이나 Wallet 개발보다는 클라이언트 프로그램에 집중했었는데, 외주로 맡은 ICO 프로젝트도 잠깐 참여하면서 스마트 컨트랙트를 다루는 법에 대해서도 배울 기회가 있었다. Ethereum의 스마트 컨트랙트 외에도 Tendermint를 기반으로 한 lotion.js를 통해 쉽게 Dapp 개발을 할 수 있는 라이브러리가 제공되는 것을 알게 되었다. 가장 좋은 공부는 직접 만들어 보는 것이라는 사수님의 조언에 따라 블록체인을backend로 활용하는 웹 서비스를 만들어 보는 것도 한 학기 동안 개인적인 목표다. HCI 수업 과제로 활용할 수 있다면 꿩 먹고 알 먹고..
-
 

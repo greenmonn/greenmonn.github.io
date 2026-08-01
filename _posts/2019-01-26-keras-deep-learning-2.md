@@ -1,6 +1,6 @@
 ---
 title: "Keras를 활용한 Deep Learning: Review (Part 2)"
-tags: [keras, deeplearning, TIL]
+tags: [AI]
 ---
 
 Convolutional Neural Network (CNN)
@@ -70,5 +70,4 @@ model.add(MaxPool2D(pool_size=(2,2))
 	1. Layer를 not-trainable하게 만드는 방법
 	2. Bottleneck Feature를 사용하는 방법
 		- [using pre trained VGG16 for another classification task](https://github.com/keras-team/keras/issues/4465)
-
 

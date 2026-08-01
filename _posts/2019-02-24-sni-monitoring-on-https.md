@@ -1,6 +1,6 @@
 ---
 title: "HTTPS SNI 차단 규제에 관해"
-tags: [writing, network, https]
+tags: [essay, CS]
 ---
 
 SNI 필드를 이용한 HTTPS 차단 기법을 알아보았다

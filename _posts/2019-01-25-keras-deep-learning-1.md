@@ -1,6 +1,6 @@
 ---
 title: "Keras를 활용한 Deep Learning: Overall Review (Part 1)"
-tags: [keras, deeplearning, TIL]
+tags: [AI]
 ---
 
  

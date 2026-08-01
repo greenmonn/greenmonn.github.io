@@ -1,0 +1,11 @@
+<figure class="post-figure">
+  <img
+    src="{{ include.src | relative_url }}"
+    alt="{{ include.alt | default: include.caption | escape }}"
+    loading="lazy"
+    decoding="async"
+  >
+  {% if include.caption %}
+    <figcaption>{{ include.caption }}</figcaption>
+  {% endif %}
+</figure>

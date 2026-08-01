@@ -1,6 +1,6 @@
 ---
 title: "CUDA와 Numba를 활용해서 빠르게 Distance Matrix 계산하기"
-tags: [cuda, python]
+tags: [engineering-tips]
 ---
 
 CUDA + Numba = 궁극의 계산 속도 
@@ -32,6 +32,5 @@ Numba + PyCUDA + skCUDA를 이용해 Memory Efficiency와 계산 시간 모두�
 약간의 삽질을 거쳐 이러한 문제들을 해결한 코드를 [여기](https://github.com/greenmonn/distanceMatrixGPU)에 fork 해서 올려두었다.
 까다로운 CUDA가 또 다른 환경에서는 다른 문제를 뱉을 수도 있겠지만, 어쨌든 Distance Matrix를 빠르게 구하고 싶은 사람들이 조금이나마
 삽질을 덜 하고 깔끔하게 결과를 얻어 가기를 바라는 마음에서 올려둔다.
-
 
 

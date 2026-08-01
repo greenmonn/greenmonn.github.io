@@ -1,6 +1,6 @@
 ---
 title: 'PyTest Fixture 사용하기'
-tags: [python]
+tags: [engineering-tips]
 ---
 
 Fixture를 통해 PyTest를 좀더 효율적으로 사용해보자

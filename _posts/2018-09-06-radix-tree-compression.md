@@ -1,6 +1,6 @@
 ---
 title: Radix Tree Compression
-tags: [data-structure, TIL]
+tags: [TIL, CS]
 ---
 
 trie 용어 정리

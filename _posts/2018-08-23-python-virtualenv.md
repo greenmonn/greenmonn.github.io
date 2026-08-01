@@ -1,6 +1,6 @@
 ---
 title: Python Virtualenv 설정
-tags: [python, TIL]
+tags: [TIL, engineering-tips]
 ---
 
 Python 버전이 꼬여서 오늘도 고통받고 있다면

@@ -1,13 +1,24 @@
 ---
 layout: default
 ---
-<div class="post-title content">
+{% unless page.tags contains 'draft' or page.tags contains 'secret' %}
+{% assign post_words = page.content | strip_html | number_of_words %}
+{% assign reading_time = post_words | divided_by: 200 %}
+{% if reading_time < 1 %}{% assign reading_time = 1 %}{% endif %}
+{% assign post_author = page.author | default: 'Juyeon Yoon' %}
+<div class="post-title content{% if page.bookstyle %} bookstyle{% endif %}">
         <h1>{{ page.title }}</h1>
-        <p class="post-date"><span class="tag is-success">created: {{ page.date | date: "%Y.%m.%d" }}</span></p>
+        <p class="post-meta">
+                <span>Created: {{ page.date | date: "%Y.%m.%d" }}</span>
+                <span class="post-meta-separator" aria-hidden="true">|</span>
+                <span>Reading Time: {{ reading_time }} min</span>
+                <span class="post-meta-separator" aria-hidden="true">|</span>
+                <span>Author: {{ post_author }}</span>
+        </p>
 </div>
 
 
-<div class="post-content content">
+<div class="post-content content{% if page.bookstyle %} bookstyle{% endif %}">
         {{ page.content | remove: page.excerpt }}
 </div>
 
@@ -16,6 +27,7 @@ layout: default
   src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
+<div class="post-discussion">
 <div id="disqus_thread"></div>
 <script>
         /**
@@ -34,6 +46,8 @@ layout: default
         })();
 </script>
 <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>     
+</div>
 
 
 <script id="dsq-count-scr" src="//greenmon-xyz.disqus.com/count.js" async></script>
+{% endunless %}
