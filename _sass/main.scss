@@ -105,6 +105,12 @@ pre {
   width: 2.5rem;
 }
 
+.navbar .navbar-logo {
+  height: auto;
+  max-height: none;
+  margin-right: 0.4rem;
+}
+
 .site-utility-bar {
   display: flex;
   justify-content: flex-end;
